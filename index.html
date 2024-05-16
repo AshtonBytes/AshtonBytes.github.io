@@ -1,12 +1,55 @@
 ---
 layout: default
 ---
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Landing Page Title</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>AshtonBytes - Software Engineering</h1>
+    <p>At AshtonBytes, we deliver <i>senior-level software solutions at entry-level prices.</i>
+      We hope to contribute to projects that are integral to the strategic future of your business and raise the productivity of our teams to increase the value to your customers.</p>
+    <h2>Why Us?</h2>
+    <ul>
+      <li><b>With strong professional communication and documentation skills</b>, we hope to maintain clear and effective collaboration throughout the project lifecycle,
+        ensuring a seamless development process and successful delivery of high-quality software solutions tailored to your business needs.</li>
+      <li><b>With proficiency in several programming languages, frameworks, and technologies</b>, we possess the capacity to learn to tackle diverse software development challenges,
+        spanning from web applications and mobile apps to complex enterprise systems and cloud-based solutions,
+        ensuring that our clients receive cutting-edge and future-proof software products.</li>
+      <li>And with our light experience, we understand we are not the best engineers for everyone,
+        but our <b>passion</b> for teaching ourselves how to best engineer software solutions to better provide value for our employers' customers <b>is second to none.</b></li>
+    </ul>
+    <h2>Reach Out Today</h2>
+    <div style="text-align: center;">
+      <p>If you would like to inquire about a quote or an oppportunity, reach out today.</p>
+      <a href="mailto:{{ site.footer-links.email }}" class="cta-button">Send Us an Email</a>
+    </div>
+  </main>
+</body>
+</html>
+<h1>Our Past Projects</h1>
 <div class="posts">
   {% for post in paginator.posts %}
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
-        <h1>{{ post.title }}</h1>
+        <h2>{{ post.title }}</h2>
 
         <div>
           <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
