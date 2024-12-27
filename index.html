@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrapesJS Example</title>
+  <!-- GrapesJS CSS -->
+  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- GrapesJS Container -->
+  <div id="gjs" style="height: 100vh; overflow: hidden;"></div>
+
+  <!-- GrapesJS JS -->
+  <script src="https://unpkg.com/grapesjs"></script>
+  <script>
+    // Initialize GrapesJS
+    const editor = grapesjs.init({
+      container: '#gjs',
+      fromElement: true,
+      height: '100%',
+      width: 'auto',
+      storageManager: { autoload: 0 },
+      panels: { defaults: [] }, // Customize panels here
+      blockManager: {
+        appendTo: '#blocks',
+      },
+    });
+  </script>
+</body>
+</html>
