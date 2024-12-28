@@ -3,29 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrapesJS Example</title>
-  <!-- GrapesJS CSS -->
-  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
+  <title>Responsive Page Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: yellow;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .banner {
+      flex: 1;
+      max-width: 300px;
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      margin-left: 10px;
+      align-items: center;
+    }
+
+    .nav button {
+      background: none;
+      border: 2px solid yellow;
+      color: yellow;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .cta {
+      border: 2px solid red;
+      padding: 10px 20px;
+      color: yellow;
+      background: none;
+      cursor: pointer;
+    }
+
+    .contact-form {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333;
+      color: yellow;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #444;
+      border: 1px solid yellow;
+      color: yellow;
+    }
+  </style>
 </head>
 <body>
-  <!-- GrapesJS Container -->
-  <div id="gjs" style="height: 100vh; overflow: hidden;"></div>
+  <div class="header">
+    <div class="banner"></div>
 
-  <!-- GrapesJS JS -->
-  <script src="https://unpkg.com/grapesjs"></script>
+    <div class="nav">
+      <button onclick="window.location.href='#section1'">Link 1</button>
+      <button onclick="window.location.href='#section2'">Link 2</button>
+      <button onclick="window.location.href='#section3'">Link 3</button>
+    </div>
+
+    <button class="cta" onclick="window.location.href='#contact-form'">Contact Us</button>
+  </div>
+
+  <div id="section1" style="height: 500px; padding: 20px;">Section 1</div>
+  <div id="section2" style="height: 500px; padding: 20px;">Section 2</div>
+  <div id="section3" style="height: 500px; padding: 20px;">Section 3</div>
+
+  <div id="contact-form" class="contact-form">
+    <h2>Contact Form</h2>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="button" onclick="submitForm()">Submit</button>
+  </div>
+
   <script>
-    // Initialize GrapesJS
-    const editor = grapesjs.init({
-      container: '#gjs',
-      fromElement: true,
-      height: '100%',
-      width: 'auto',
-      storageManager: { autoload: 0 },
-      panels: { defaults: [] }, // Customize panels here
-      blockManager: {
-        appendTo: '#blocks',
-      },
-    });
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var message = document.getElementById("message").value;
+
+      // Simple validation
+      if (name.trim() === "" || message.trim() === "") {
+        alert("Please fill out both fields.");
+        return;
+      }
+
+      var subject = encodeURIComponent("Contact Form Submission");
+      var body = encodeURIComponent("Name: " + name + "\nMessage: " + message);
+
+      var mailtoLink = "mailto:example@example.com?subject=" + subject + "&body=" + body;
+
+      // Open the mail client with the generated mailto link
+      window.location.href = mailtoLink;
+    }
   </script>
 </body>
 </html>
