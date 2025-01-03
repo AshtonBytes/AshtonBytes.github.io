@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Page Example</title>
+  <title>Page</title>
   <style>
     body {
       margin: 0;
@@ -31,7 +31,8 @@
     .nav {
       display: flex;
       gap: 20px;
-      margin-left: 10px;
+      margin-left: auto;
+      margin-right: 20px;
       align-items: center;
     }
 
@@ -67,6 +68,37 @@
       border: 1px solid yellow;
       color: yellow;
     }
+
+
+    .footer {
+      background-color: black;
+      color: yellow;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .footer .company-info {
+      font-size: 16px;
+    }
+    .footer .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    .footer .social-links a {
+      color: yellow;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .footer .social-links a:hover {
+      text-decoration: underline;
+    }
+
+
   </style>
 </head>
 <body>
@@ -74,17 +106,19 @@
     <div class="banner"></div>
 
     <div class="nav">
-      <button onclick="window.location.href='#section1'">Link 1</button>
-      <button onclick="window.location.href='#section2'">Link 2</button>
-      <button onclick="window.location.href='#section3'">Link 3</button>
+      <button onclick="window.location.href='#section1'">Hero</button>
+      <button onclick="window.location.href='#section2'">Product Details</button>
+      <button onclick="window.location.href='#section3'">Reviews</button>
+      <button onclick="window.location.href='#section4'">FAQ</button>
     </div>
 
     <button class="cta" onclick="window.location.href='#contact-form'">Contact Us</button>
   </div>
 
-  <div id="section1" style="height: 500px; padding: 20px;">Section 1</div>
-  <div id="section2" style="height: 500px; padding: 20px;">Section 2</div>
-  <div id="section3" style="height: 500px; padding: 20px;">Section 3</div>
+  <div id="section1" style="height: 500px; padding: 20px;">Hero</div>
+  <div id="section2" style="height: 500px; padding: 20px;">Product(/Service) Details</div>
+  <div id="section3" style="height: 500px; padding: 20px;">Reviews</div>
+  <div id="section3" style="height: 500px; padding: 20px;">FAQ</div>
 
   <div id="contact-form" class="contact-form">
     <h2>Contact Form</h2>
@@ -92,6 +126,7 @@
     <textarea id="message" placeholder="Your Message" required></textarea>
     <button type="button" onclick="submitForm()">Submit</button>
   </div>
+  <br> <br> <br> <br> <br> <br> <br>
 
   <script>
     function submitForm() {
@@ -113,6 +148,22 @@
       window.location.href = mailtoLink;
     }
   </script>
+
+<div class="footer">
+  <div class="company-info">
+    Fakename <br>
+    Fakestreet 1234 <br>
+    123456 Faketown <br>
+    © 2025 Your Company Name
+  </div>
+  <div class="social-links"> <br>
+    <a href="https://facebook.com" target="_blank">Facebook</a> <br>
+    <a href="https://twitter.com" target="_blank">Twitter</a> <br> 
+    <a href="https://instagram.com" target="_blank">Instagram</a> <br>
+  </div>
+</div>
+
+
 </body>
 </html>
 
