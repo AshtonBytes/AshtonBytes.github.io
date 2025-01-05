@@ -55,6 +55,7 @@
     .contact-form {
       margin-top: 50px;
       padding: 20px;
+      margin: 2%;
       background-color: #333;
       color: yellow;
     }
@@ -97,7 +98,17 @@
     .footer .social-links a:hover {
       text-decoration: underline;
     }
+    input[type="email"], textarea {
+    width: 80%; /* Makes it responsive */
+    max-width: 800px; /* Limits the width */
+    padding: 0.5rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    }
 
+  textarea {
+    height: 350px; /* Adjust the height to fit text */
+    resize: vertical; /* Allows resizing only vertically */
+  }
 
   </style>
 </head>
@@ -122,33 +133,24 @@
 
   <div id="contact-form" class="contact-form">
     <h2>Contact Form</h2>
-    <input type="text" id="name" placeholder="Your Name" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="button" onclick="submitForm()">Submit</button>
-  </div>
-  <br> <br> <br> <br> <br> <br> <br>
-
-  <script>
-    function submitForm() {
-      var name = document.getElementById("name").value;
-      var message = document.getElementById("message").value;
-
-      // Simple validation
-      if (name.trim() === "" || message.trim() === "") {
-        alert("Please fill out both fields.");
-        return;
-      }
-
-      var subject = encodeURIComponent("Contact Form Submission");
-      var body = encodeURIComponent("Name: " + name + "\nMessage: " + message);
-
-      var mailtoLink = "mailto:example@example.com?subject=" + subject + "&body=" + body;
-
-      // Open the mail client with the generated mailto link
-      window.location.href = mailtoLink;
-    }
-  </script>
-
+    <form
+  action="https://formspree.io/f/myzzbpbr"
+  method="POST"
+>
+  <label>
+    Your email: <br>
+    <input type="email" name="email">
+  </label>
+  <br>
+  <label>
+    Your message: <br>
+    <textarea name="message"></textarea>
+  </label>
+ <br>
+  <button type="submit">Send</button>
+</form>
+</div>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 <div class="footer">
   <div class="company-info">
     Fakename <br>
