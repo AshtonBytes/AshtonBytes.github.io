@@ -10,6 +10,7 @@
       padding: 0;
       background-color: black;
       color: yellow;
+      font-family: Arial, sans-serif;
     }
 
     .header {
@@ -52,24 +53,78 @@
       cursor: pointer;
     }
 
+.section {
+  display: flex;
+  align-items: flex-start; /* Align content to the top */
+  justify-content: center; /* Center content horizontally */
+  padding: 20px;
+  background: black;
+  border-bottom: 1px solid #333;
+}
+
+    .section:nth-child(even) {
+      background: #111;
+    }
+
+    .section:nth-child(odd) .content img {
+  margin-left: auto; /* Push the image to the right */
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;  /* Align text to the top */
+  width: 100%; /* Make sure content spans full width */
+  gap: 20px;
+}
+
+.content img {
+  width: 50%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure the text is aligned to the top */
+}
+
+
+.section:nth-child(odd) .content img {
+  margin-left: auto;  /* Push the image to the far right */
+}
+
+/* For even sections, the image stays to the left */
+.section:nth-child(even) .content img {
+  margin-right: auto;  /* Ensure the image stays on the left */
+}
+
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
     .contact-form {
       margin-top: 50px;
       padding: 20px;
-      margin: 2%;
-      background-color: #333;
+      background-color: #444;
       color: yellow;
     }
 
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
+      width: 50%;
       padding: 10px;
       margin: 10px 0;
-      background-color: #444;
+      background-color: #555;
       border: 1px solid yellow;
       color: yellow;
     }
-
 
     .footer {
       background-color: black;
@@ -78,94 +133,92 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
       box-sizing: border-box;
     }
-    .footer .company-info {
-      font-size: 16px;
-    }
-    .footer .social-links {
-      display: flex;
-      gap: 15px;
-    }
+
     .footer .social-links a {
       color: yellow;
       text-decoration: none;
-      font-size: 16px;
     }
+
     .footer .social-links a:hover {
       text-decoration: underline;
     }
-    input[type="email"], textarea {
-    width: 80%; /* Makes it responsive */
-    max-width: 800px; /* Limits the width */
-    padding: 0.5rem;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    }
 
-  textarea {
-    height: 350px; /* Adjust the height to fit text */
-    resize: vertical; /* Allows resizing only vertically */
-  }
 
   </style>
 </head>
 <body>
   <div class="header">
     <div class="banner"></div>
-
     <div class="nav">
       <button onclick="window.location.href='#section1'">Hero</button>
       <button onclick="window.location.href='#section2'">Product Details</button>
       <button onclick="window.location.href='#section3'">Reviews</button>
       <button onclick="window.location.href='#section4'">FAQ</button>
     </div>
-
     <button class="cta" onclick="window.location.href='#contact-form'">Contact Us</button>
   </div>
 
-  <div id="section1" style="height: 500px; padding: 20px;">Hero</div>
-  <div id="section2" style="height: 500px; padding: 20px;">Product(/Service) Details</div>
-  <div id="section3" style="height: 500px; padding: 20px;">Reviews</div>
-  <div id="section3" style="height: 500px; padding: 20px;">FAQ</div>
+  <div id="section1" class="section">
+    <div class="content">
+      <div class="text">
+        <h1>Hero</h1>
+        <p>Welcome to our website! Learn more about what we do.</p>
+      </div>
+      <img src="./1.jpeg" alt="Hero Image">
+    </div>
+  </div>
+
+  <div id="section2" class="section">
+    <div class="content">
+      <img src="./2.jpeg" alt="Product Image">
+      <div class="text">
+        <h1>Product/Service Details</h1>
+        <p>Here are the details about our amazing product/service.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="section3" class="section">
+    <div class="content">
+      <div class="text">
+        <h1>Reviews</h1>
+        <p>See what others are saying about us!</p>
+      </div>
+      <img src="./3.jpeg" alt="Reviews Image">
+    </div>
+  </div>
+
+  <div id="section4" class="section">
+    <div class="content">
+      <img src="./4.jpeg" alt="FAQ Image">
+      <div class="text">
+        <h1>FAQ</h1>
+        <p>Find answers to your questions here.</p>
+      </div>
+    </div>
+  </div>
 
   <div id="contact-form" class="contact-form">
     <h2>Contact Form</h2>
-    <form
-  action="https://formspree.io/f/myzzbpbr"
-  method="POST"
->
-  <label>
-    Your email: <br>
-    <input type="email" name="email">
-  </label>
-  <br>
-  <label>
-    Your message: <br>
-    <textarea name="message"></textarea>
-  </label>
- <br>
-  <button type="submit">Send</button>
-</form>
-</div>
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-<div class="footer">
-  <div class="company-info">
-    Fakename <br>
-    Fakestreet 1234 <br>
-    123456 Faketown <br>
-    © 2025 Your Company Name
+    <form action="https://formspree.io/f/myzzbpbr" method="POST">
+      <label>Your email:<br><input type="email" name="email"></label><br>
+      <label>Your message:<br><textarea name="message"></textarea></label><br>
+      <button type="submit">Send</button>
+    </form>
   </div>
-  <div class="social-links"> <br>
-    <a href="https://facebook.com" target="_blank">Facebook</a> <br>
-    <a href="https://twitter.com" target="_blank">Twitter</a> <br> 
-    <a href="https://instagram.com" target="_blank">Instagram</a> <br>
+  <br> <br> <br>
+
+  <div class="footer">
+    <div class="company-info">
+      Fakename<br>Fakestreet 1234<br>123456 Faketown<br>© 2025 Your Company Name
+    </div>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a><br>
+      <a href="https://twitter.com" target="_blank">Twitter</a><br>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
   </div>
-</div>
-
-
 </body>
 </html>
-
