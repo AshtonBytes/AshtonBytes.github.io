@@ -63,7 +63,7 @@
 }
 
     .section:nth-child(even) {
-      background: #111;
+      background: #010101;
     }
 
     .section:nth-child(odd) .content img {
@@ -146,6 +146,60 @@
     }
 
 
+    ul {
+  list-style: none; /* Remove default bullet styling */
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.bullet {
+  display: inline-flex;
+  width: 1em; /* Matches the font size of the text */
+  height: 1em; /* Ensures the image remains square */
+  margin-right: 0.5em; /* Add spacing between the image and text */
+}
+
+.bullet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fits within the square */
+}
+
+#section3 .text {
+  text-align: center; /* Center-align all text inside this container */
+  margin-bottom: 1em; /* Add space between the text and the "Test" content */
+}
+
+#section3 .content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center-align all items within the content */
+}
+
+#section3 .content p {
+  margin-top: 1em; /* Optional: Add some spacing for the paragraph */
+}
+
+
+#section5 .text {
+  text-align: center; /* Center-align all text inside this container */
+  margin-bottom: 1em; /* Add space between the text and the "Test" content */
+}
+
+#section5 .content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center-align all items within the content */
+}
+
+#section5 .content p {
+  margin-top: 1em; /* Optional: Add some spacing for the paragraph */
+}
+
   </style>
 </head>
 <body>
@@ -153,18 +207,24 @@
     <div class="banner"></div>
     <div class="nav">
       <button onclick="window.location.href='#section1'">Hero</button>
-      <button onclick="window.location.href='#section2'">Product Details</button>
+      <button onclick="window.location.href='#section2'">Product/Service Details</button>
       <button onclick="window.location.href='#section3'">Reviews</button>
       <button onclick="window.location.href='#section4'">FAQ</button>
     </div>
-    <button class="cta" onclick="window.location.href='#contact-form'">Contact Us</button>
+    <button class="cta" onclick="window.location.href='#contact-form'">Call Us | Get a Quote</button>
   </div>
 
   <div id="section1" class="section">
     <div class="content">
       <div class="text">
-        <h1>Hero</h1>
-        <p>Welcome to our website! Learn more about what we do.</p>
+        <h1>Hero</h1> <br>
+        <h2>Creating a Startup and in <span style="color: #FF0000;"> Need </span> of Software? 
+        We <span style="color: #FFD600;">Solve</span> it All! 
+        From Requirement Elaboration and Development to Maintenance and Retirement.
+        </h2> <br>
+        <h4> As an Agile, Accomplished and Degree Holding Software Engineer, who specializes in Desktop Application Development in Python, C#, and C++, I pride myself on my team’s second-to-none customer service, reliability, and quality of work</h4> <br>
+        <p></p> <br>
+         <!--Cta: Call Us-->
       </div>
       <img src="./1.jpeg" alt="Hero Image">
     </div>
@@ -174,8 +234,21 @@
     <div class="content">
       <img src="./2.jpeg" alt="Product Image">
       <div class="text">
-        <h1>Product/Service Details</h1>
-        <p>Here are the details about our amazing product/service.</p>
+        <h1>Product/Service Details</h1> <br>
+        <h2>What We Can Do For You</h2> <br>
+        <h3>To Handle All of Your Software Needs</h3> <br> <br>
+        <h4>Desktop Applications</h4> <br>
+        <h5>Complete, Stand Alone Software Packages for Windows/Linux/iOS</h5> <br>
+        <p>      <span class="bullet">
+          <img src="bullet2.jpg" alt="•" />
+        </span>Light, Medium, or Heavyweight <br>
+        <span class="bullet">
+          <img src="bullet2.jpg" alt="•" />
+        </span> SaaS, Licensed, or Free <br>
+        <span class="bullet">
+          <img src="bullet2.jpg" alt="•" />
+        </span> Python, C#, C++</p> <br>
+     <!--Cta: Call Us-->
       </div>
     </div>
   </div>
@@ -183,10 +256,25 @@
   <div id="section3" class="section">
     <div class="content">
       <div class="text">
-        <h1>Reviews</h1>
-        <p>See what others are saying about us!</p>
+        <h1>Reviews</h1> <br>
+        <h3>Don’t just take our word for it</h3> <br>
+        <h4>See What <span style="color: #FFD600;">Others</span> have to say!</h4> <br>
+        <p> 
+         <h5> 👤 Mark Gilmore </h5> <br>
+           
+          <h5>“Intelligent, Talented and Professional” </h5>
+         
+          "Ashton A. was great to work with. He is a very intelligent, talented and professional person. He was able to develop code to meet my needs. He also gave me options to increase the overall capabilities of his code which made for a complete and powerful solutions to my requests. He is an excellent programmer / engineer that used various languages / code to complete the project on schedule and within budget. I look forward to working again with Ashton again on futures projects."<br>
+
+<br> <br>
+
+          <h4> 👤 Phillip Webb</h4> <br>
+          
+          <h5>“Several others have tried […] Ashton solved it”</h5>
+         
+      "Ashton is a very respectful and a wonderful developer. He helped solve a crash on an application we use inbouse. Several other have tried to solve this without success and Ashton solved it for us." <br>
+      </p>
       </div>
-      <img src="./3.jpeg" alt="Reviews Image">
     </div>
   </div>
 
@@ -194,8 +282,26 @@
     <div class="content">
       <img src="./4.jpeg" alt="FAQ Image">
       <div class="text">
-        <h1>FAQ</h1>
-        <p>Find answers to your questions here.</p>
+        <h1>FAQ <br></h1>
+        <h2>For All Questions, Qualms, and Queries <br></h2>
+        <h3>Frequently Asked Questions <br></h3>
+        <p><h4>Do you charge hourly or by project? </h4> <br>
+         <h5> We communicate with our clients to estimate the work hours of a project.
+          From there, we give our <span style="color: #FFD600;">Guarantee</span> that we shall deliver the product to the agreed specifications for not a penny more.
+        <br> </h5> 
+        <h4><br>I need a Website, WebApp, Dapp, or Mobile App, can you make it for me?<br></h4>
+       <h5> <br>While not advertised, we are passionate about expanding our knowledge and proficiency to all areas of Software Engineering, including all applications. As such, you’ll receive a discounted rate for our services. </h5>
+        </p>
+      </div>
+    </div>
+  </div> 
+
+  <div id="section5" class="section">
+    <div class="content">
+      <div class="text">
+        <h1>Your Software Solution, <span style="color: #FFD600;"> One </span> Call Away
+        </h1> <br>
+        <h3>Get a <span style="bold">Free</span> Quote within minutes!</h3> <br>
       </div>
     </div>
   </div>
@@ -212,12 +318,9 @@
 
   <div class="footer">
     <div class="company-info">
-      Fakename<br>Fakestreet 1234<br>123456 Faketown<br>© 2025 Your Company Name
+      Legal Info: ©2025 Aurivara LLC All Rights Reserved
     </div>
     <div class="social-links">
-      <a href="https://facebook.com" target="_blank">Facebook</a><br>
-      <a href="https://twitter.com" target="_blank">Twitter</a><br>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
     </div>
   </div>
 </body>
