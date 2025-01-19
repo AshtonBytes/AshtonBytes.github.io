@@ -8,8 +8,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: yellow;
+      background-color: #36454F;
+      color: #c0c0c0;
       font-family: Arial, sans-serif;
     }
 
@@ -46,24 +46,41 @@
     }
 
     .cta {
-      border: 2px solid red;
+      border: 2px solid #c0c0c0;
       padding: 10px 20px;
-      color: yellow;
+      color: #c0c0c0;
       background: none;
       cursor: pointer;
     }
+
+    .cta:hover {
+  background: #232b2b; 
+}
+
+
+    .gaq {
+      border: 2px solid #d4af37;
+      padding: 10px 20px;
+      color: #d4af37;
+      background: none;
+      cursor: pointer;
+    }
+
+    .gaq:hover {
+  background: #232b2b; 
+}
 
 .section {
   display: flex;
   align-items: flex-start; /* Align content to the top */
   justify-content: center; /* Center content horizontally */
   padding: 20px;
-  background: black;
+  background: #36454F;
   border-bottom: 1px solid #333;
 }
 
     .section:nth-child(even) {
-      background: #010101;
+      background: #36454F;
     }
 
     .section:nth-child(odd) .content img {
@@ -112,8 +129,8 @@
     .contact-form {
       margin-top: 50px;
       padding: 20px;
-      background-color: #444;
-      color: yellow;
+      background-color: #36454F;
+      color: #c0c0c0;
     }
 
     .contact-form input,
@@ -122,13 +139,13 @@
       padding: 10px;
       margin: 10px 0;
       background-color: #555;
-      border: 1px solid yellow;
-      color: yellow;
+      border: 1px solid #c0c0c0;
+      color: #c0c0c0;
     }
 
     .footer {
-      background-color: black;
-      color: yellow;
+      background-color: #36454F;
+      color: #c0c0c0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -211,7 +228,7 @@ li {
       <button onclick="window.location.href='#section3'">Reviews</button>
       <button onclick="window.location.href='#section4'">FAQ</button>
     </div>
-    <button class="cta" onclick="window.location.href='#section5'">Call Us | Get a Quote</button>
+    <button class="gaq" onclick="window.location.href='#section5'">Call Us | Get a Quote</button>
 
   </div>
 
@@ -220,12 +237,13 @@ li {
       <div class="text">
         <h1>Hero</h1> <br>
         <h2>Creating a Startup and in <span style="color: #FF0000;"> Need </span> of Software? 
-        We <span style="color: #FFD600;">Solve</span> it All! 
+        We <span style="color: #d4af37;">solve</span> it All! 
         From Requirement Elaboration and Development to Maintenance and Retirement.
         </h2> <br>
         <h4> As an Agile, Accomplished and Degree Holding Software Engineer, who specializes in Desktop Application Development in Python, C#, and C++, I pride myself on my team’s second-to-none customer service, reliability, and quality of work</h4> <br>
         <p></p> <br>
-        <button class="cta" onclick="window.location.href='#section5'">Call Us | Get a Quote</button>
+        <button class="cta" onclick="window.location.href='#section5'">Call Us</button>
+        <button class="gaq" onclick="window.location.href='#section5'">Get a Quote</button>
       </div>
       <img src="./1.jpeg" alt="Hero Image">
     </div>
@@ -249,7 +267,8 @@ li {
         <span class="bullet">
           <img src="bullet2.jpg" alt="•" />
         </span> Python, C#, C++</p> <br>
-        <button class="cta" onclick="window.location.href='#section5'">Call Us | Get a Quote</button>
+        <button class="cta" onclick="window.location.href='#section5'">Call Us </button>
+        <button class="gaq" onclick="window.location.href='#section5'">Get a Quote</button>
       </div>
     </div>
   </div>
@@ -259,7 +278,7 @@ li {
       <div class="text">
         <h1>Reviews</h1> <br>
         <h3>Don’t just take our word for it</h3> <br>
-        <h4>See What <span style="color: #FFD600;">Others</span> have to say!</h4> <br>
+        <h4>See What <span style="color: #d4af37;">others</span> have to say!</h4> <br>
         <p> 
          <h5> 👤 Mark Gilmore </h5> <br>
            
@@ -288,7 +307,7 @@ li {
         <h3>Frequently Asked Questions <br></h3>
         <p><h4>Do you charge hourly or by project? </h4> <br>
          <h5> We communicate with our clients to estimate the work hours of a project.
-          From there, we give our <span style="color: #FFD600;">Guarantee</span> that we shall deliver the product to the agreed specifications for not a penny more.
+          From there, we give our <span style="color: #d4af37;">guarantee</span> that we shall deliver the product to the agreed specifications for not a penny more.
         <br> </h5> 
         <h4><br>I need a Website, WebApp, Dapp, or Mobile App, can you make it for me?<br></h4>
        <h5> <br>While not advertised, we are passionate about expanding our knowledge and proficiency to all areas of Software Engineering, including all applications. As such, you’ll receive a discounted rate for our services. </h5>
@@ -300,10 +319,11 @@ li {
   <div id="section5" class="section">
     <div class="content">
       <div class="text">
-        <h1>Your Software Solution, <span style="color: #FFD600;"> One </span> Call Away
+        <h1>Your Software Solution, <span style="color: #d4af37;"> One </span> Call Away
         </h1> <br>
-        <h3>Get a <span style="bold">Free</span> Quote within minutes!</h3> <br>
-        <button class="cta" onclick="window.location.href='#section5'">Call Us | Get a Quote</button>
+        <h3>Get a <span style="font-weight: bold;">free</span> Quote within minutes!</h3> <br>
+        <button class="cta" onclick="window.location.href='#section5'">Call Us</button> 
+        <button class="gaq" onclick="window.location.href='#section5'"> Get a Quote</button>
       </div>
     </div>
   </div>
