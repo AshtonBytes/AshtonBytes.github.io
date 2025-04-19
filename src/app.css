@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+:root {
+    font-size: 16px;
+    --space-xxs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-s: 0.75rem;
+    --space-m: 1rem;
+    --space-l: 1.25rem;
+    --space-xl: 1.75rem;
+    --space-xxl: 2.5rem;
+    --space-3xl: 3.75rem;
+    --space-4xl: 6.25rem;
+    --space-5xl: 10rem;
+    --space-6xl: 15rem;
+    --aurivara-red: #ed1c24;
+    --aurivara-green: #27ae60;
+    --aurivara-black: #1c1c1e;
+    --aurivara-white: #f5f5f5;
+    --aurivara-gray: #2A2A2D;
+    --aurivara-light-gray: #66666A;
+
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, .poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+span {
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.margin-xxs {
+    margin: var(--space-xxs)
+}
+.margin-xs {
+    margin: var(--space-xs)
+}
+.margin-s {
+    margin: var(--space-s)
+}
+.margin-m {
+    margin: var(--space-m)
+}
+.margin-l {
+    margin: var(--space-l)
+}
+.margin-xl {
+    margin: var(--space-xl)
+}
+.margin-xxl {
+    margin: var(--space-xxl)
+}
+
+.mt-xl {
+    margin-top: var(--space-xl)
+}
+
+.darkBackground {
+    background-color: var(--aurivara-gray);
+}
+
+.blackBackground {
+    background-color: var(--aurivara-black);
+}
+
+.white {
+    color: var(--aurivara-white)
+}
+
+.aurivara-red {
+    color: var(--aurivara-red)
+}
+
+.redBorder {
+    border-color: var(--aurivara-red)
+}
+
+.greenBorder {
+    border-color: var(--aurivara-green)
+}
+
+.redBackground {
+    background-color: var(--aurivara-red);
+}
+
+.aurivara-green {
+    color: var(--aurivara-green)
+}
+
+.grayBackground {
+    background-color: var(--aurivara-light-gray);
+}
+
+.bgGrid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px)
+}
+
+button,
+.button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--aurivara-white);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+button:hover {
+    border-color: var(--aurivara-black);
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.conversionBtnOne.dark {
+    border-color: var(--aurivara-red);
+    background-color: var(--aurivara-black);
+    color: var(--aurivara-white);
+}
+.conversionBtnOne.dark:hover {
+    background-color: var(--aurivara-red);
+}
+.conversionBtnOne.light {
+    border-color: var(--aurivara-red);
+    background-color: var(--aurivara-black);
+    color: var(--aurivara-white);
+}
+.conversionBtnOne.light:hover {
+    background-color: var(--aurivara-red);
+}
+
+.conversionBtnTwo.dark {
+    background: var(--aurivara-green);
+    color: var(--aurivara-white);
+}
+.conversionBtnTwo.dark:hover {
+    border-color: var(--aurivara-green);
+    background-color: var(--aurivara-black);
+    color: var(--aurivara-green);
+}
+
+.conversionBtnTwo.light {
+    background: var(--aurivara-green);
+    color: var(--aurivara-white);
+}
+.conversionBtnTwo.light:hover {
+    border-color: var(--aurivara-green);
+    background-color: var(--aurivara-black);
+    color: var(--aurivara-green);
+}
+
+.hyperLink:hover {
+    color: var(--aurivara-green)
+}
+
+.dropShadow {
+    filter: drop-shadow(-10.8923px 14.523px 35.0973px rgba(29, 140, 242, 0.2))
+}
+.beveledCorners {
+    border-radius: 15px; /* Adjust the value for more or less beveling */
+  }
+
+.fadeIn {
+    animation: fadeIn 300ms ease-in forwards
+}
+
+.toggle-button {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button.light {
+    background-color: var(--aurivara-white);
+}
+
+.toggle-button.dark {
+    background-color: var(--aurivara-black);
+}
+
+.toggle-slider {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+.toggle-slider.light {
+    background-color: #d6cf34
+}
+
+.toggle-slider.dark {
+    background-color: #6d8cad;
+}
+
+.toggle-slider.active {
+    transform: translateX(30px);
+}
+
+.light {
+    background-color: var(--aurivara-white);
+    color: var(--aurivara-gray);
+}
+
+.dark {
+    background-color: var(--aurivara-gray);
+    color: var(--aurivara-white);
+}
+.special.light {
+    background-color: var(--aurivara-white) !important;
+    color: var(--aurivara-gray) !important;
+}
+.special.dark {
+    background-color: var(--aurivara-black) !important;
+    color: var(--aurivara-white) !important;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
