@@ -8,7 +8,7 @@
     <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between p-4">
         <a href="/">
             <h1 class="font-semibold">
-                <img src="assets/AurivaraLogo.png" alt="Aurivara LLC. Logo" style="height: var(--space-4xl); width: auto;"/>
+                <img src="assets/AurivaraLogo.png" alt="Aurivara LLC. Logo" style="height: var(--space-3xl); width: auto;"/>
             </h1>
         </a>
         <button
