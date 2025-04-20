@@ -5,7 +5,6 @@
     import {openMenu} from '../store';
     import Header from "../components/Header.svelte";
     import { lightMode } from '../store';
-    export const prerender = true;
     let y: number;
     $: outerHeight = 0
 
