@@ -6,5 +6,4 @@ export default defineConfig({
     tailwindcss(),
     sveltekit(),
   ],
-  base: '/AshtonBytes.github.io/'
 });
