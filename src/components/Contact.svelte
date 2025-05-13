@@ -3,7 +3,7 @@
     import { lightMode } from '../store';
 </script>
 <SectionWrapper id="contact">
-    <div class="flex flex-col gap-8 sm:gap-12 md:gap-16 py-20 flex-1 items-center justify-center {$lightMode ? 'light' : 'dark'}">
+    <div class="flex flex-col pt-24 scroll-mt-24 gap-8 sm:gap-12 md:gap-16 py-20 flex-1 items-center justify-center {$lightMode ? 'light' : 'dark'}">
         <div class="flex flex-col gap-2">
           <p class="opacity-60 text-base sm:text-lg md:text-xl text-center">
             Get in Touch
