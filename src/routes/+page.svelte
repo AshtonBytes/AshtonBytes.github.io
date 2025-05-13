@@ -2,6 +2,7 @@
     import Hero from "../components/Hero.svelte";
     import Product from "../components/Product.svelte";
     import Reviews from "../components/Reviews.svelte";
+    import Contact from "../components/Contact.svelte";
     import FaQs from "../components/FAQs.svelte";
     import Conversion from "../components/Conversion.svelte";
     import { lightMode } from '../store';
@@ -40,7 +41,8 @@
 <main class="flex flex-col {$lightMode ? "light" : "dark"}">
     <Hero />
     <Product />
-    <Reviews />
+    <!-- <Reviews /> -->
     <FaQs />
     <Conversion />
+    <Contact />
 </main>

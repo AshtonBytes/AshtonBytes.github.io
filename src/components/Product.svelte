@@ -12,7 +12,7 @@
                 "Ready to revise and make additions on your schedule."
             ],
             description: "Speak to our American team to plan development.",
-            imgUrl: "assets/HeroImage.jpg",
+            imgUrl: "assets/Communication.png",
         },
         {
             featureList: [
@@ -22,7 +22,7 @@
                 "Building software for long term maintainability."
             ],
             description: "Receive an software update every 2 weeks.",
-            imgUrl: "assets/HeroImage.jpg",
+            imgUrl: "assets/Agile.png",
         },
         {
             featureList: [
@@ -31,7 +31,7 @@
                 "See if your project qualifies for the Learning on the Job Package."
             ],
             description: "While we may know a lot, there is always more to learn.",
-            imgUrl: "assets/HeroImage.jpg",
+            imgUrl: "assets/SkilledDevelopers.png",
         },
     ];
 </script>

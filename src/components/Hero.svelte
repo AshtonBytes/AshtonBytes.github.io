@@ -27,9 +27,9 @@
                 <div class = "margin-xl">
                     <CtAs />
                 </div>
-                <div class="margin-xl">
+                <!-- <div class="margin-xl">
                     <Stars />
-                </div>
+                </div> -->
             </h2>
         </div>
         <img src="assets/HeroImage.jpg" alt="Programming" class="w-full beveledCorners dropShadow" /> <!-- Adjust image width as needed -->

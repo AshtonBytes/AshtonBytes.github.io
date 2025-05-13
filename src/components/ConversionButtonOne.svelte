@@ -1,8 +1,8 @@
 <script>
     import { lightMode } from "../store";
 </script>
-<button class="conversionBtnOne {$lightMode ? "light" : "dark"}"> 
+<a href="mailto:contact@aurivara.com" rel="external" class="button conversionBtnOne {$lightMode ? "light" : "dark"}"> 
     <p class="text-base sm:text-lg md:text-xl">
         Get A Quote
     </p>
-</button>
+</a>

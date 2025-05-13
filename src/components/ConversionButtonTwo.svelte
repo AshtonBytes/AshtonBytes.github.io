@@ -1,8 +1,8 @@
 <script>
     import { lightMode } from "../store";
 </script>
-<button class="conversionBtnTwo {$lightMode ? "light" : "dark"}">
+<a href="tel:+16152457225" class="button conversionBtnTwo {$lightMode ? "light" : "dark"}">
     <p class="text-base sm:text-lg md:text-xl">
-        &rarr; Sign Up for the Waitlist &larr;
+        &rarr; Call (615) 245-7225 &larr;
     </p>
-</button>
+</a>
