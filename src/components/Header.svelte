@@ -20,7 +20,6 @@
         <nav class="hidden md:flex items-center gap-4 lg:gap-6">
             <a href="#product" class="duration-200 hyperLink hover:text-400 cursor-pointer">Product</a>
             <a href= "#faqs" class="duration-200 hyperLink hover:text-400 cursor-pointer">FAQs</a>
-            <a href="#contact" class="duration-200 hyperLink hover:text-400 cursor-pointer">Contact</a>
             <ConversionButtonOne/>
         </nav>
     </div>
