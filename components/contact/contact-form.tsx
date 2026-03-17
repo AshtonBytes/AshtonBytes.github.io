@@ -24,11 +24,25 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setSubmitted(true)
+    try {
+      const response = await fetch('https://formspree.io/f/mblopyvn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        alert('There was an issue submitting your form. Please try again.')
+      }
+    } catch (error) {
+      alert('There was an error submitting your form. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (submitted) {
