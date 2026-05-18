@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import { ContactForm } from "@/components/contact/contact-form"
-import { Clock, Mail } from "lucide-react"
+import { Clock, Mail, Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact — Aurivara",
-  description: "Get in touch with Aurivara. Let's build something together. Request a quote for your custom website project.",
+  description: "Get in touch with Aurivara. Let's build something together. Request a quote for your custom software project.",
 }
 
 export default function ContactPage() {
@@ -51,11 +51,25 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <a 
-                      href="mailto:contact@aurivara.com" 
+                    <a
+                      href="mailto:contact@aurivara.com"
                       className="text-sm text-gold hover:underline"
                     >
                       contact@aurivara.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg gold-gradient-bg shrink-0">
+                    <Phone className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Phone</h3>
+                    <a
+                      href="tel:+16159880408"
+                      className="text-sm text-gold hover:underline"
+                    >
+                      (615) 988-0408
                     </a>
                   </div>
                 </div>

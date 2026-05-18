@@ -3,7 +3,7 @@ import { GraduationCap, Briefcase, Code2, Shield, Eye, Hammer } from "lucide-rea
 
 export const metadata: Metadata = {
   title: "About — Aurivara",
-  description: "Learn about Aurivara and our founder Ashton Anderson. We build custom websites for small businesses with reliability, transparency, and craftsmanship.",
+  description: "Learn about Aurivara and our founder Ashton Anderson. We build custom software solutions for small businesses with reliability, transparency, and craftsmanship.",
 }
 
 const values = [
@@ -91,13 +91,13 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Aurivara was founded on a simple principle: fulfilling golden promises. We believe that small businesses deserve the same quality of web development as enterprise companies, without the enterprise price tag.
+                Aurivara was founded on a simple principle: fulfilling golden promises. We believe that small businesses deserve the same quality of custom software as enterprise companies, without the enterprise price tag.
               </p>
               <p>
                 We exclusively serve small businesses under 50 employees, ensuring that every client receives personalized attention and a dedicated partnership throughout their project.
               </p>
               <p>
-                Our all-American team means you&apos;ll always work with developers who understand your market and communicate clearly. At the end of every project, you receive the complete source code and full documentation — because it&apos;s your project, and you should own it completely.
+                Our all-American team means you&apos;ll always work with developers who understand your market and communicate clearly. We build custom software that automates the repetitive, menial, and tedious tasks slowing your team down — and at the end of every project, you receive the complete source code and full documentation, because it&apos;s your software and you should own it completely.
               </p>
             </div>
           </div>

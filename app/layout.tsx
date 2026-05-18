@@ -12,8 +12,8 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: 'Aurivara — Fulfilling Golden Promises',
-  description: 'Custom websites for small businesses. Built fast, built right, and handed over with full ownership. Web development agency serving businesses under 50 employees.',
-  keywords: ['web development', 'small business', 'custom websites', 'web agency', 'Aurivara'],
+  description: 'Custom software solutions that automate the repetitive, menial, and tedious tasks slowing your business down. Serving small businesses under 50 employees.',
+  keywords: ['software automation', 'custom software', 'small business', 'workflow automation', 'Aurivara'],
 }
 
 export const viewport: Viewport = {

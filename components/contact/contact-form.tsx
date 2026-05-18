@@ -4,10 +4,10 @@ import { useState } from "react"
 
 const projectTypes = [
   { value: "", label: "Select a project type" },
-  { value: "starter", label: "Starter ($350)" },
-  { value: "standard", label: "Standard ($550)" },
-  { value: "advanced", label: "Advanced ($1,100)" },
-  { value: "not-sure", label: "Not Sure" },
+  { value: "workflow-automation", label: "Workflow Automation" },
+  { value: "system-integration", label: "System Integration" },
+  { value: "data-processing", label: "Data Processing" },
+  { value: "not-sure", label: "Other / Not Sure" },
 ]
 
 export function ContactForm() {

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Code, Laptop, Smartphone } from "lucide-react"
+import { Zap, ArrowLeftRight, Clock } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -12,7 +12,7 @@ export function HeroSection() {
               <span className="gold-gradient">Fulfilling Golden Promises.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Custom websites for small businesses — built fast, built right, and handed over with full ownership.
+              Custom software that automates the repetitive, menial, and tedious tasks slowing your business down.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -21,12 +21,12 @@ export function HeroSection() {
               >
                 Get a Quote
               </Link>
-              <Link
-                href="/services"
+              <a
+                href="tel:+16159880408"
                 className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold btn-secondary rounded-md"
               >
-                See Our Services
-              </Link>
+                Call Us
+              </a>
             </div>
           </div>
 
@@ -36,21 +36,21 @@ export function HeroSection() {
               <div className="grid grid-cols-3 gap-6">
                 <div className="flex flex-col items-center gap-3 p-4 rounded-lg bg-secondary/50">
                   <div className="p-3 rounded-full gold-gradient-bg">
-                    <Laptop className="h-6 w-6 text-primary-foreground" />
+                    <Zap className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <span className="text-sm font-medium text-center">Web Apps</span>
+                  <span className="text-sm font-medium text-center">Automate</span>
                 </div>
                 <div className="flex flex-col items-center gap-3 p-4 rounded-lg bg-secondary/50">
                   <div className="p-3 rounded-full gold-gradient-bg">
-                    <Smartphone className="h-6 w-6 text-primary-foreground" />
+                    <ArrowLeftRight className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <span className="text-sm font-medium text-center">Mobile</span>
+                  <span className="text-sm font-medium text-center">Integrate</span>
                 </div>
                 <div className="flex flex-col items-center gap-3 p-4 rounded-lg bg-secondary/50">
                   <div className="p-3 rounded-full gold-gradient-bg">
-                    <Code className="h-6 w-6 text-primary-foreground" />
+                    <Clock className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <span className="text-sm font-medium text-center">APIs</span>
+                  <span className="text-sm font-medium text-center">Save Time</span>
                 </div>
               </div>
               <div className="mt-8 space-y-3">

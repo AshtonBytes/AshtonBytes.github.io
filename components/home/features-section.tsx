@@ -13,8 +13,8 @@ const features = [
   },
   {
     icon: Wrench,
-    title: "Our Expertise",
-    description: "Web, Desktop, and Mobile Apps, APIs, Hardware integration, and Wireless Communication solutions.",
+    title: "Built for Your Workflow",
+    description: "Every solution is custom-built around your specific tools, processes, and business needs — no templates, no off-the-shelf software.",
   },
 ]
 

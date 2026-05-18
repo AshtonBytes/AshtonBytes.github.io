@@ -9,41 +9,41 @@ import {
 
 export const metadata: Metadata = {
   title: "FAQ — Aurivara",
-  description: "Frequently asked questions about Aurivara's web development services. Learn about our process, pricing, and what to expect.",
+  description: "Frequently asked questions about Aurivara's custom software solutions. Learn about our process, pricing, and what to expect.",
 }
 
 const faqs = [
   {
     question: "Who is your ideal client?",
-    answer: "Small businesses of 50 people or less looking for a website or web application.",
+    answer: "Small businesses of 50 people or less that have repetitive, manual software tasks eating up their team's time.",
   },
   {
     question: "How much does it cost?",
-    answer: "Packages start at $350. See our Services page for full pricing.",
+    answer: "Pricing depends on the scope of your project. Reach out for a free quote — there's no obligation.",
   },
   {
     question: "What do I get at the end?",
-    answer: "Full source code, live Vercel deployment, and complete ownership of your GitHub repo and project.",
+    answer: "Full source code, complete documentation, and total ownership of everything we build. It's your software.",
   },
   {
-    question: "Do you use templates?",
-    answer: "No. Every site is built from scratch using your branding, colors, and content.",
+    question: "What kinds of tasks can you automate?",
+    answer: "Data entry, report generation, file processing, system integrations, email notifications, scheduled jobs, and more. If it's repetitive, we can likely automate it.",
   },
   {
-    question: "Can I update my own site after delivery?",
-    answer: "On the Advanced tier yes, via a no-code CMS. On Starter and Standard, updates can be requested or made directly in the source code.",
+    question: "How long does it take?",
+    answer: "It depends on the complexity. You'll receive a clear timeline upfront and regular progress updates throughout.",
   },
   {
-    question: "What if I don't have a domain?",
-    answer: "No problem. We can advise on purchasing one and handle the full deployment once you have it.",
+    question: "Do you build from scratch?",
+    answer: "It depends. If an off-the-shelf solution is the best fit for your problem and values, I'll set you up for success with it. If not, we build something custom — software designed specifically around your workflows, tools, and the way your team actually operates. That means no bloat, no workarounds, and nothing you don't need.",
   },
   {
-    question: "What if I already have a website and want a redesign?",
-    answer: "The process is the same. The new site replaces the old one on your existing domain.",
+    question: "What if I'm not sure exactly what I need?",
+    answer: "That's fine — most clients aren't. We'll work through it together during a free discovery call.",
   },
   {
     question: "Do you offer ongoing maintenance?",
-    answer: "Not as a default, but post-delivery support can be arranged. Ask about it when you get a quote.",
+    answer: "Yes. Ongoing maintenance is included by default — we don't just hand off and disappear. After delivery, we stay available to keep your software running with long term support and working as your needs evolve.",
   },
 ]
 
