@@ -23,7 +23,7 @@ export function HeroSection() {
               </Link>
               <a
                 href="tel:+16159880408"
-                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold btn-secondary rounded-md text-white"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold btn-secondary rounded-md"
               >
                 Call Us
               </a>
