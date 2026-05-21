@@ -9,7 +9,7 @@ export function HeroSection() {
           {/* Text Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
-              <span className="gold-gradient">Fulfilling Golden Promises.</span>
+              <span className="gold-gradient">We Automate the Boring Parts.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
               Custom software that automates the repetitive, menial, and tedious tasks slowing your business down.
