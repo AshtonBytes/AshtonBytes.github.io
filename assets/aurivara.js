@@ -1,11 +1,145 @@
 /* ============================================================
-   AURIVARA — shared behavior
+   AURIVARA: shared behavior
    Reads window.AURIVARA_AB = { key, variants:{A:{...},B:{...}} }
    Applies variant text to [data-ab="<field>"] elements.
    Includes GA4 event tracking with variant attached.
    ============================================================ */
 (function () {
   "use strict";
+
+  /* ============================================================
+     CONTENT LOADING FROM MARKDOWN
+     Fetches content.md and makes it available as window.AURIVARA_CONTENT
+  ============================================================ */
+
+  async function loadSiteContent() {
+    try {
+      const res = await fetch('/content.md');
+      if (!res.ok) throw new Error('Failed to load content.md');
+      const md = await res.text();
+
+      const content = parseAurivaraMarkdown(md);
+      window.AURIVARA_CONTENT = content;
+
+      // Merge A/B variants from Markdown into the existing system
+      if (content.variants && window.AURIVARA_AB) {
+        window.AURIVARA_AB.variants = {
+          A: content.variants.A || {},
+          B: content.variants.B || {}
+        };
+      }
+
+      console.log('%c[Aurivara] Content loaded from content.md', 'color:#4fb39a');
+      return content;
+    } catch (err) {
+      console.warn('[Aurivara] Could not load content.md, using fallback in HTML', err);
+      return null;
+    }
+  }
+
+  function parseAurivaraMarkdown(md) {
+    const lines = md.split('\n');
+    const content = {
+      meta: {},
+      hero: { variants: {} },
+      about: {},
+      features: { items: [] },
+      faq: { questions: [] },
+      variants: {}
+    };
+
+    let currentSection = null;
+    let currentVariant = null;
+    let currentFeature = null;
+    let currentQuestion = null;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+
+      if (!line || line.startsWith('>')) continue;
+
+      // Top level sections
+      if (line.startsWith('## ')) {
+        const section = line.replace('## ', '').toLowerCase().trim();
+        currentSection = section;
+        currentVariant = null;
+        currentFeature = null;
+        currentQuestion = null;
+        continue;
+      }
+
+      // Variant blocks under Hero
+      if (line.startsWith('### Variant ')) {
+        currentVariant = line.replace('### Variant ', '').trim().toUpperCase();
+        if (currentSection === 'hero') {
+          content.hero.variants[currentVariant] = {};
+        }
+        if (currentSection === 'variant config (for a/b testing)') {
+          content.variants[currentVariant] = {};
+        }
+        continue;
+      }
+
+      // Key: Value lines
+      if (line.includes(':') && !line.startsWith('-') && !line.startsWith('*')) {
+        const colonIndex = line.indexOf(':');
+        const key = line.substring(0, colonIndex).trim().toLowerCase().replace(/\s+/g, '');
+        let value = line.substring(colonIndex + 1).trim();
+
+        // Handle bold markdown in values
+        value = value.replace(/\*\*(.+?)\*\*/g, '$1');
+
+        if (currentSection === 'meta') {
+          content.meta[key] = value;
+        } else if (currentSection === 'hero' && currentVariant) {
+          content.hero.variants[currentVariant][key] = value;
+        } else if (currentSection === 'about') {
+          content.about[key] = value;
+        } else if (currentSection === 'features' && currentFeature) {
+          currentFeature[key] = value;
+        } else if (currentSection === 'variant config (for a/b testing)' && currentVariant) {
+          content.variants[currentVariant][key] = value;
+        }
+        continue;
+      }
+
+      // Feature blocks
+      if (line.startsWith('### Feature ')) {
+        currentFeature = { num: line.replace('### Feature ', '').trim() };
+        content.features.items.push(currentFeature);
+        continue;
+      }
+
+      // FAQ Questions
+      if (line.startsWith('#### Q')) {
+        currentQuestion = {};
+        content.faq.questions.push(currentQuestion);
+        continue;
+      }
+
+      if (line.startsWith('**Question:**') && currentQuestion) {
+        currentQuestion.question = line.replace('**Question:**', '').trim();
+      }
+      if (line.startsWith('**Answer:**') && currentQuestion) {
+        currentQuestion.answer = line.replace('**Answer:**', '').trim();
+      }
+    }
+
+    return content;
+  }
+
+  // Load content early (before A/B system runs)
+  // Note: This is async, so we start it immediately
+  const contentPromise = loadSiteContent();
+
+  // After content loads, re-apply A/B if new variants came from Markdown
+  contentPromise.then(() => {
+    if (window.AURIVARA_CONTENT && window.AURIVARA_CONTENT.variants) {
+      // The A/B system will have already merged the variants above.
+      // We can trigger a re-application here if needed in the future.
+      console.log('%c[Aurivara] Content variants merged from Markdown', 'color:#4fb39a');
+    }
+  });
 
   /* ---------------- A/B TESTING + VARIANT EXPOSURE ---------------- */
   var cfg = window.AURIVARA_AB || null;
@@ -66,7 +200,7 @@
       });
 
       console.log(
-        "%c[Aurivara A/B] %c" + pageName + " — active variant: %c" + v,
+        "%c[Aurivara A/B] %c" + pageName + ": active variant: %c" + v,
         "color:#c8a24c;font-weight:bold", "color:#a39b8c", "color:#f4e3a4;font-weight:bold"
       );
       Object.keys(data).forEach(function (field) {
@@ -294,7 +428,7 @@
       } catch (err) {
         console.error("[Aurivara] Submission failed", err);
         if (submitBtn) submitBtn.disabled = false;
-        alert("Sorry — something went wrong sending your message. Please try again or email us directly.");
+        alert("Sorry. Something went wrong sending your message. Please try again or email us directly.");
       }
     });
   }
