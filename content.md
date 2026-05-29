@@ -48,23 +48,23 @@
 
 **Lead:** This is not a faceless platform. When you work with Aurivara you get a single, hands-on partner who learns how your business actually runs before changing a thing.
 
-**Subtext:** We start with one small, useful automation, usually something that's been nagging you for months. We prove it saves you time and grow from there. No pressure, no jargon.
+**Subtext:** I start with one small, useful automation, usually something that's been nagging you for months. I prove it saves you time and grow from there. No pressure, no jargon.
 
 **CTA:** Book a free intro call
 
 ## Features
 
-**Eyebrow:** What we do
+**Eyebrow:** What I do
 
-**Headline:** Three honest ways<br>we hand your time back.
+**Headline:** Three honest ways<br>I hand your time back.
 
-**Intro:** We keep the menu short on purpose. These are the things that save small businesses the most hours.
+**Intro:** I keep the menu short on purpose. These are the things that save small businesses the most hours.
 
 ### Feature 1
 
 **Title:** Connect your tools
 
-**Description:** We link the apps you already use so information moves itself. No more copy-pasting between tabs.
+**Description:** I link the apps you already use so information moves itself. No more copy-pasting between tabs.
 
 ### Feature 2
 
@@ -84,7 +84,7 @@
 
 **Headline:** Good<br>questions.
 
-**Intro:** Anything else? <a href="#contact">Just ask</a>. We reply personally.
+**Intro:** Anything else? <a href="#contact">Just ask</a>. I reply personally.
 
 ### Questions
 
@@ -92,25 +92,25 @@
 
 **Question:** Do I need to be technical?
 
-**Answer:** Not even a little. You explain your business in plain language; we handle everything technical behind the scenes.
+**Answer:** Not even a little. You explain your business in plain language; I handle everything technical behind the scenes.
 
 #### Q2
 
-**Question:** How small can we start?
+**Question:** How small can you start?
 
-**Answer:** As small as one task. We'd rather automate one thing well and earn your trust than sell you a big package up front.
+**Answer:** As small as one task. I'd rather automate one thing well and earn your trust than sell you a big package up front.
 
 #### Q3
 
 **Question:** What will it cost?
 
-**Answer:** After a free call we quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.
+**Answer:** After a free call I quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.
 
 #### Q4
 
 **Question:** Will you replace my current tools?
 
-**Answer:** No. We work with what you already have and make it do more. There's nothing new for you to learn.
+**Answer:** No. I work with what you already have and make it do more. There's nothing new for you to learn.
 
 ## Contact
 
@@ -118,7 +118,7 @@
 
 **Headline:** Let's have a<br>no-pressure chat.
 
-**Lead:** Tell us a bit about your business and what's slowing you down. We'll reply personally, usually the same day.
+**Lead:** Tell me a bit about your business and what's slowing you down. I'll reply personally, usually the same day.
 
 **Points:**
 - A friendly 20-minute call
@@ -127,11 +127,11 @@
 
 **Form Title:** What's slowing you down?
 
-**Form Note:** We reply personally · No spam, ever
+**Form Note:** I reply personally · No spam, ever
 
 **Success Message Title:** Thanks. Message received.
 
-**Success Message:** We've got your note and will be in touch personally, usually within the day.
+**Success Message:** I've got your note and will be in touch personally, usually within the day.
 
 ## Footer
 
