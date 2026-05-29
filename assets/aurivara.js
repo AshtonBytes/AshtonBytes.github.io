@@ -75,6 +75,15 @@
     };
 
     applyVariant(variant);
+
+    // Push variant_assigned directly to dataLayer as an early, reliable signal.
+    // This helps ensure the event is captured for returning users who already
+    // have the A/B cookie (in addition to the delayed send below).
+    (window.dataLayer = window.dataLayer || []).push({
+      event: "variant_assigned",
+      variant: variant,
+      page: pageName
+    });
   }
 
   // Expose variant globally so other scripts / console can access it
@@ -108,8 +117,22 @@
   window.AURIVARA.trackEvent = trackEvent;
   window.AURIVARA.getVariant = function () { return variant; };
 
-  // Fire as soon as we know the variant (critical for A/B analysis)
-  trackEvent("variant_assigned");
+  // Fire "variant_assigned" for GA4 A/B reporting.
+  // We use a small delay + wait for the 'load' event to give the async
+  // GA4 gtag script time to fully initialize. This ensures the event
+  // reliably fires for both new visitors and returning users who already
+  // have the A/B cookie.
+  function sendVariantAssigned() {
+    trackEvent("variant_assigned");
+  }
+
+  if (document.readyState === "complete") {
+    setTimeout(sendVariantAssigned, 120);
+  } else {
+    window.addEventListener("load", function () {
+      setTimeout(sendVariantAssigned, 120);
+    });
+  }
 
   /* ---------------- NAV SCROLL STATE ---------------- */
   var nav = document.getElementById("nav");
