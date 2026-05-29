@@ -8,6 +8,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/aurivara.css" />
+
+<!-- Google Analytics 4 - A/B Variant Tracking -->
+<!-- 
+  1. In GA4, go to Admin → Custom definitions and create these custom dimensions:
+     - "Variant" (Event scope, parameter name: variant)
+     - "Page"     (Event scope, parameter name: page)
+  This makes it easy to compare Variant A vs B performance in Explorations.
+
+  Your Measurement ID: G-K8CJVDJREE
+-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K8CJVDJREE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K8CJVDJREE');
+</script>
 </head>
 <!-- calmer ambience for the conservative startup feel -->
 <body style="--amb-1:0.05; --amb-2:0.025;" data-screen-label="Startup">
@@ -63,7 +82,7 @@
         </p>
       </div>
       <div class="hero-figure">
-        <div class="ph"><span class="ph-tag">hero — before / after of a workflow · 16:8</span></div>
+        <img src="assets/HeroA.jpg" alt="Before and after of a calm, automated business workflow on a warm dark desk" />
       </div>
     </div>
   </section>
@@ -85,8 +104,8 @@
         <a href="#contact" class="btn btn-ghost"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></a>
       </div>
       <div class="about-imgs duo reveal">
-        <div class="ph"><span class="ph-tag">founder portrait</span></div>
-        <div class="ph"><span class="ph-tag">workspace</span></div>
+        <img src="assets/Founder.png" alt="Founder portrait in a calm, thoughtful setting" />
+        <img src="assets/Workspace.jpg" alt="Serene and organized workspace with warm lighting" />
       </div>
     </div>
   </section>
@@ -220,13 +239,6 @@
     </div>
   </footer>
 
-  <!-- ============ VARIANT BADGE ============ -->
-  <div class="variant-badge" id="variantBadge" title="A/B test assignment (click reroll to switch)">
-    <span class="vdot"></span>
-    Variant&nbsp;<b id="variantLabel">A</b>
-    <span class="switch" id="variantReroll">reroll</span>
-  </div>
-
   <!-- shared SVG gradient for icons -->
   <svg width="0" height="0" style="position:absolute"><defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
@@ -239,6 +251,7 @@
     window.AURIVARA_AB = {
       page: "startup",
       key: "aurivara_ab_startup",
+      cookieExpiryDays: 15,   // Variant is remembered for 15 days via cookie
       variants: {
         A: {
           headlinePre: "Less busywork.",
