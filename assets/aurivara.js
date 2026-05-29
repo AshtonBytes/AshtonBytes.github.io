@@ -76,6 +76,10 @@
 
     applyVariant(variant);
 
+    // Set variant as a User Property (in addition to the event parameter).
+    // This enables better user-level analysis, audiences, and segmentation by variant.
+    gtag('set', { 'variant': variant });
+
     // Push variant_assigned directly to dataLayer as an early, reliable signal.
     // This helps ensure the event is captured for returning users who already
     // have the A/B cookie (in addition to the delayed send below).
@@ -123,6 +127,8 @@
   // reliably fires for both new visitors and returning users who already
   // have the A/B cookie.
   function sendVariantAssigned() {
+    // Re-set the user property on every page load for reliability
+    gtag('set', { 'variant': variant });
     trackEvent("variant_assigned");
   }
 
