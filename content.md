@@ -46,7 +46,7 @@
 
 **Headline:** A real person<br>behind every automation.
 
-**Lead:** We're not a faceless platform. When you work with Aurivara you get a single, hands-on partner who learns how your business actually runs before changing a thing.
+**Lead:** This is not a faceless platform. When you work with Aurivara you get a single, hands-on partner who learns how your business actually runs before changing a thing.
 
 **Subtext:** We start with one small, useful automation, usually something that's been nagging you for months. We prove it saves you time and grow from there. No pressure, no jargon.
 
