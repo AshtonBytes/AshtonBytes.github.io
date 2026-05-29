@@ -1,0 +1,12 @@
+# This .gitignore is intentionally mostly empty.
+# You can add rules here to ignore files/folders you don't want in the repo.
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+.idea/
+.vscode/
+*.swp
+*~
