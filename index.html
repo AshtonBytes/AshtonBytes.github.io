@@ -78,7 +78,7 @@
           <a href="#features" class="btn btn-ghost">See what I do</a>
         </div>
         <p style="margin-top:26px; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--ink-faint);">
-          No long contracts · One friendly point of contact · Start small
+          No long contracts · One friendly point of contact · Free website previews available · Start small
         </p>
       </div>
       <div class="hero-figure">
@@ -98,8 +98,7 @@
           partner who learns how your business actually runs before changing a thing.
         </p>
         <p class="about-sub">
-          I start with one small, useful automation, usually something that's been nagging you
-          for months. I prove it saves you time and grow from there. No pressure, no jargon.
+          I often start with a free website preview — a simple, working version of what a better site could look like for your business. From there the automation opportunities usually become clear. No pressure, no jargon.
         </p>
         <a href="#contact" class="btn btn-ghost"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></a>
       </div>
@@ -136,6 +135,20 @@
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.4"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4" stroke-linejoin="round"/><path d="M10 13h6M10 16h4" stroke-linecap="round"/></svg></div>
           <h3>Sort the paperwork</h3>
           <p>Quotes, invoices, and follow-ups created and chased for you, from the first hello to getting paid.</p>
+        </div>
+      </div>
+
+      <!-- Free Website Preview (full-width / two-column below the grid) -->
+      <div class="preview-offer reveal">
+        <div class="preview-inner">
+          <div class="preview-copy">
+            <span class="eyebrow">Quick win</span>
+            <h3>Free Website Preview</h3>
+            <p>I build you a real, no-obligation preview of a cleaner website for your business. Many people find this is the easiest way to see what’s possible before going further.</p>
+          </div>
+          <div class="preview-cta">
+            <a href="#contact" class="btn btn-ghost">Request a free preview</a>
+          </div>
         </div>
       </div>
     </div>
@@ -183,6 +196,9 @@
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2.4"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zero obligation to continue</li>
         </ul>
         <p style="margin-top:24px; font-size:15.5px; color:var(--ink-mut);">
+          Many people start with a free website preview. Happy to build one for you.
+        </p>
+        <p style="margin-top:8px; font-size:15.5px; color:var(--ink-mut);">
           Prefer to talk? <a href="tel:+16159880408" style="color:var(--gold-2); border-bottom:1px solid var(--gold-2);">(615) 988-0408</a>
         </p>
       </div>
@@ -200,6 +216,20 @@
             <label for="msg">What's slowing you down?</label>
             <textarea id="msg" name="msg" placeholder="The repetitive task you'd love to never do again…"></textarea>
           </div>
+
+          <!-- Free Website Preview request (progressively revealed) -->
+          <div class="field preview-request">
+            <label class="checkbox-label">
+              <input type="checkbox" id="wants_preview" name="wants_preview" value="yes">
+              <span>I'd like a free website preview</span>
+            </label>
+          </div>
+
+          <div class="field preview-inspiration" id="inspirationWrapper">
+            <label for="website_inspiration">Website inspiration or references</label>
+            <textarea id="website_inspiration" name="website_inspiration" placeholder="Links to sites you love, or ideas for your own…"></textarea>
+          </div>
+
           <button type="submit" class="btn btn-gold"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></button>
           <p class="form-note">I reply personally · No spam, ever</p>
         </div>
@@ -242,6 +272,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- Free Website Preview widget (bottom right) -->
+  <div id="previewWidget" class="preview-widget" aria-hidden="true">
+    <button class="widget-close" aria-label="Dismiss">×</button>
+    <div class="widget-content">
+      <span class="eyebrow">Quiet offer</span>
+      <h4>Free Website Preview</h4>
+      <p>A real static preview of a better site for your business — at no cost.</p>
+      <button type="button" class="btn btn-gold widget-cta">Request one</button>
+    </div>
+  </div>
 
   <!-- shared SVG gradient for icons -->
   <svg width="0" height="0" style="position:absolute"><defs>

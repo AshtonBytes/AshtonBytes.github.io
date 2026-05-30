@@ -48,7 +48,7 @@
 
 **Lead:** This is not a faceless platform. When you work with Aurivara you get a single, hands-on partner who learns how your business actually runs before changing a thing.
 
-**Subtext:** I start with one small, useful automation, usually something that's been nagging you for months. I prove it saves you time and grow from there. No pressure, no jargon.
+**Subtext:** I often start with a free website preview — a simple, working version of what a better site could look like for your business. From there the automation opportunities usually become clear. No pressure, no jargon.
 
 **CTA:** Book a free intro call
 
@@ -77,6 +77,24 @@
 **Title:** Sort the paperwork
 
 **Description:** Quotes, invoices, and follow-ups created and chased for you, from the first hello to getting paid.
+
+## Free Website Preview
+
+**Eyebrow:** Quick win
+
+**Headline:** Free Website Preview
+
+**Description:** I build you a real, no-obligation preview of a cleaner website for your business. Many people find this is the easiest way to see what’s possible before going further.
+
+**CTA:** Request a free preview
+
+## Hero
+
+**Trust Line:** No long contracts · One friendly point of contact · Free website previews available · Start small
+
+## Contact
+
+**Preview Note:** Many people start with a free website preview. Happy to build one for you.
 
 ## FAQ
 

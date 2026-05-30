@@ -471,4 +471,119 @@
   /* ---------------- YEAR ---------------- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------------- FREE WEBSITE PREVIEW WIDGET (bottom right) ---------------- */
+  (function initPreviewWidget() {
+    var widget = document.getElementById("previewWidget");
+    if (!widget) return;
+
+    var closeBtn = widget.querySelector(".widget-close");
+    var ctaBtn = widget.querySelector(".widget-cta");
+
+    // TESTING MODE: LocalStorage "show once per user" is temporarily disabled.
+    // The widget will appear on every page load/refresh while testing.
+    var DISMISSED_KEY = "aurivara_preview_widget_dismissed";
+
+    // Clear any previous dismissal so it always shows during testing
+    try { localStorage.removeItem(DISMISSED_KEY); } catch (e) {}
+
+    function isDismissed() {
+      // Always return false so the widget can keep showing during testing
+      return false;
+    }
+
+    function markDismissed() {
+      // Disabled during testing — do nothing
+      // (Uncomment below if you want to restore normal behavior later)
+      // try { localStorage.setItem(DISMISSED_KEY, "true"); } catch (e) {}
+    }
+
+    function showWidget() {
+      if (isDismissed()) return;
+      widget.setAttribute("aria-hidden", "false");
+      widget.classList.add("is-visible");
+    }
+
+    function hideWidget() {
+      widget.classList.remove("is-visible");
+      // Remove from flow after animation
+      setTimeout(function () {
+        widget.setAttribute("aria-hidden", "true");
+      }, 300);
+    }
+
+    function handleRequest() {
+      // markDismissed();   // Disabled in testing mode
+      hideWidget();
+
+      var contact = document.getElementById("contact");
+      var checkbox = document.getElementById("wants_preview");
+      var wrapper = document.getElementById("inspirationWrapper");
+      var inspiration = document.getElementById("website_inspiration");
+
+      // Activate the preview request in the form
+      if (checkbox) checkbox.checked = true;
+      if (wrapper) wrapper.classList.add("is-visible");
+
+      if (contact) {
+        // Scroll 40px further down than the top of the contact section
+        const yOffset = 40;
+        const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth"
+        });
+      }
+
+      // Focus the inspiration field after the scroll has had time to settle.
+      // No additional scrollIntoView here — that was causing the snap
+      // where "What's slowing you down?" jumped to the top.
+      setTimeout(function () {
+        if (inspiration) {
+          inspiration.focus();
+          // .select() removed to avoid extra browser-driven scrolling
+        }
+      }, 1350);
+    }
+
+    function handleClose() {
+      // markDismissed();   // Disabled in testing mode
+      hideWidget();
+    }
+
+    // Event listeners
+    if (closeBtn) closeBtn.addEventListener("click", handleClose);
+    if (ctaBtn) ctaBtn.addEventListener("click", handleRequest);
+
+    // Gentle appearance — less aggressive than the old modal
+    if (!isDismissed()) {
+      setTimeout(function () {
+        // Only show if user isn't already deep into the contact area
+        var scrollY = window.scrollY || 0;
+        var contactSection = document.getElementById("contact");
+        var nearContact = contactSection && (contactSection.getBoundingClientRect().top < 200);
+
+        if (!nearContact && scrollY < 1800) {
+          showWidget();
+        }
+      }, 1000); // 1 second
+    }
+
+    /* ---------------- PREVIEW CHECKBOX TOGGLE (form) ---------------- */
+    var wantsPreview = document.getElementById("wants_preview");
+    var inspirationWrapper = document.getElementById("inspirationWrapper");
+
+    if (wantsPreview && inspirationWrapper) {
+      wantsPreview.addEventListener("change", function () {
+        if (wantsPreview.checked) {
+          inspirationWrapper.classList.add("is-visible");
+        } else {
+          inspirationWrapper.classList.remove("is-visible");
+          var ta = document.getElementById("website_inspiration");
+          if (ta) ta.value = "";
+        }
+      });
+    }
+  })();
 })();
