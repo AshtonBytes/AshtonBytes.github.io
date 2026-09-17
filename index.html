@@ -4,14 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aurivara: Automation, the simple way</title>
+<meta name="description" content="Aurivara is a one man automation studio. I help owner-led businesses automate the busywork eating their week. Call (615) 988-0408 and you get me, start to finish." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/aurivara.css" />
 
 <!-- Google Analytics 4 - A/B Variant Tracking -->
-<!-- 
-  1. In GA4, go to Admin → Custom definitions and create these custom dimensions:
+<!--
+  1. In GA4, go to Admin, then Custom definitions, and create these custom dimensions:
      - "Variant" (Event scope, parameter name: variant)
      - "Page"     (Event scope, parameter name: page)
   This makes it easy to compare Variant A vs B performance in Explorations.
@@ -38,13 +39,17 @@
         <img src="assets/aurivara-logo-cropped.png" alt="Aurivara" />
       </a>
       <div class="nav-links">
+        <a href="#how-the-call-works">The call</a>
         <a href="#about">About</a>
         <a href="#features">What I do</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-gold"><span data-ab="ctaNav">Say hello</span> <span class="arr">→</span></a>
+        <a href="tel:+16159880408" class="btn btn-gold nav-call" data-call="nav">
+          <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="nav-call-full" data-ab="ctaNav">(615) 988-0408</span>
+          <span class="nav-call-short">Call</span>
+        </a>
       </div>
       <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -53,32 +58,38 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#how-the-call-works">The call</a>
     <a href="#about">About</a>
     <a href="#features">What I do</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-gold"><span data-ab="ctaNav">Say hello</span> <span class="arr">→</span></a>
+    <a href="tel:+16159880408" class="btn btn-gold" data-call="mobile_menu">
+      <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call (615) 988-0408
+    </a>
   </div>
 
   <!-- ============ HERO (centered, calm) ============ -->
   <section class="hero-center" id="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <span class="eyebrow">Independent automation studio</span>
+        <span class="eyebrow">A one man automation studio</span>
         <h1>
           <span data-ab="headlinePre">Less busywork.</span><br />
           <span class="gold-text" data-ab="headlineEm">More of the work you love.</span>
         </h1>
         <p class="lead">
-          Aurivara is a small studio that helps owner-led businesses automate the repetitive
-          digital tasks eating their week: quietly, carefully, and without the enterprise price tag.
+          Aurivara is one person, not an agency. I help owner-led businesses automate the
+          repetitive digital tasks eating their week. The fastest way to start is a short phone call.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-gold"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></a>
-          <a href="#features" class="btn btn-ghost">See what I do</a>
+          <a href="tel:+16159880408" class="btn btn-gold btn-call" data-call="hero_primary">
+            <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-ab="ctaPrimary">Call (615) 988-0408</span>
+          </a>
+          <a href="#callback" class="btn btn-ghost">Rather I called you?</a>
         </div>
-        <p style="margin-top:26px; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--ink-faint);">
-          No long contracts · One friendly point of contact · Free website previews available · Start small
+        <p class="hero-hours">
+          Monday to Friday, 9 to 6 Central. One number, and I am the one who picks it up. Twenty minutes, no obligation.
         </p>
       </div>
       <div class="hero-figure">
@@ -87,20 +98,58 @@
     </div>
   </section>
 
+  <!-- ============ WHAT HAPPENS ON THE CALL ============ -->
+  <section class="section section-tight call-band alt" id="how-the-call-works">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Before you dial</span>
+        <h2>Here is exactly<br /><span class="gold-text">how the call goes.</span></h2>
+        <p class="lead">Twenty minutes, no script, no pitch. If there is nothing worth automating, I will tell you that too.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <span class="k">01. First 5 minutes</span>
+          <h3>You talk, I listen</h3>
+          <p>Tell me how your week actually runs and which jobs you would hand over tomorrow if you could. Plain language, no tech questions.</p>
+        </div>
+        <div class="step">
+          <span class="k">02. Next 10 minutes</span>
+          <h3>I tell you what I would fix first</h3>
+          <p>You leave with at least one concrete idea you can act on, whether or not you ever hire me.</p>
+        </div>
+        <div class="step">
+          <span class="k">03. Last 5 minutes</span>
+          <h3>A flat price, or a friendly goodbye</h3>
+          <p>If it is a fit, I quote one simple price for the first automation. If it is not, I will say so and point you somewhere better.</p>
+        </div>
+      </div>
+      <div class="band-cta reveal">
+        <a href="tel:+16159880408" class="btn btn-gold btn-call" data-call="call_band">
+          <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-ab="ctaPrimary">Call (615) 988-0408</span>
+        </a>
+        <span class="band-note">Or <a href="#callback">have me call you</a> at a better time.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ABOUT (short, founder-led) ============ -->
-  <section class="section about alt" id="about">
+  <section class="section about" id="about">
     <div class="wrap about-grid">
       <div class="about-copy reveal">
         <span class="eyebrow">Hello there</span>
-        <h2>A real person<br /><span class="gold-text">behind every automation.</span></h2>
+        <h2>The person who answers<br /><span class="gold-text">is the person who builds.</span></h2>
         <p class="lead">
-          This is not a faceless platform. When you work with Aurivara you get a single, hands-on
-          partner who learns how your business actually runs before changing a thing.
+          Aurivara is one man. There is no agency behind me, no team to hand you off to, and
+          nobody else who will ever touch your work. You call, I answer, I build it.
         </p>
         <p class="about-sub">
-          I often start with a free website preview — a simple, working version of what a better site could look like for your business. From there the automation opportunities usually become clear. No pressure, no jargon.
+          That is the whole promise. No account manager, no discovery questionnaire, no junior rep reading from a script. It also means I take on a handful of businesses at a time, so you get the attention a bigger shop cannot give you.
         </p>
-        <a href="#contact" class="btn btn-ghost"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></a>
+        <a href="tel:+16159880408" class="btn btn-gold btn-call" data-call="about">
+          <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-ab="ctaPrimary">Call (615) 988-0408</span>
+        </a>
       </div>
       <div class="about-imgs duo reveal">
         <img src="assets/Founder.png" alt="Founder portrait in a calm, thoughtful setting" />
@@ -110,12 +159,12 @@
   </section>
 
   <!-- ============ WHAT I DO (3 simple cards) ============ -->
-  <section class="section features" id="features">
+  <section class="section features alt" id="features">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">What I do</span>
         <h2>Three honest ways<br /><span class="gold-text">I hand your time back.</span></h2>
-        <p class="lead">I keep the menu short on purpose. These are the things that save small businesses the most hours.</p>
+        <p class="lead">One person can only do a few things properly, so I keep the menu short on purpose. These are the three that save small businesses the most hours.</p>
       </div>
       <div class="feat-grid reveal">
         <div class="feat-card">
@@ -138,16 +187,16 @@
         </div>
       </div>
 
-      <!-- Free Website Preview (full-width / two-column below the grid) -->
+      <!-- Free Website Preview: now a reason to call, not a separate track -->
       <div class="preview-offer reveal">
         <div class="preview-inner">
           <div class="preview-copy">
-            <span class="eyebrow">Quick win</span>
-            <h3>Free Website Preview</h3>
-            <p>I build you a real, no-obligation preview of a cleaner website for your business. Many people find this is the easiest way to see what’s possible before going further.</p>
+            <span class="eyebrow">Ask me on the call</span>
+            <h3>A free website preview</h3>
+            <p>Mention it on the call and I will build you a real, no-obligation preview of a cleaner website for your business. Built by me, in my own time, because it is the easiest way to show you what I can do.</p>
           </div>
           <div class="preview-cta">
-            <a href="#contact" class="btn btn-ghost">Request a free preview</a>
+            <a href="tel:+16159880408" class="btn btn-ghost" data-call="preview_offer">Call and ask</a>
           </div>
         </div>
       </div>
@@ -155,90 +204,112 @@
   </section>
 
   <!-- ============ FAQ (short) ============ -->
-  <section class="section faq alt" id="faq">
+  <section class="section faq" id="faq">
     <div class="wrap faq-grid">
       <div class="faq-intro reveal">
         <span class="eyebrow">FAQ</span>
         <h2 style="font-size:clamp(34px,3.8vw,52px); margin-top:18px;">Good<br /><span class="gold-text">questions.</span></h2>
-        <p class="lead" style="margin-top:18px;">Anything else? <a href="#contact" style="color:var(--gold-2); border-bottom:1px solid var(--line);">Just ask</a>. I reply personally.</p>
+        <p class="lead" style="margin-top:18px;">Anything else? <a href="tel:+16159880408" data-call="faq_intro" style="color:var(--gold-2); border-bottom:1px solid var(--line);">Just call and ask</a>. I answer my own phone.</p>
       </div>
       <div class="faq-list reveal" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">Am I going to get a sales pitch?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">No. It is a conversation, not a script. If I cannot genuinely save you hours, I will say so on the call and you have lost twenty minutes, nothing more.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What should I have ready before I call?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Nothing at all. If you want to be prepared, think of the one task you would most love to never do again. That is enough to start.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Who actually does the work?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">I do. All of it. The person who answers the phone is the person who scopes it, builds it, tests it, and fixes it if it ever breaks. Nothing gets passed to a junior and nothing gets sent offshore.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What if I get voicemail?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Then I am on another call or heads down building something. Leave your name and number and you will hear back the same day. It is me listening to the message, not an assistant.</div></div>
+        </div>
         <div class="faq-item">
           <button class="faq-q">Do I need to be technical?<span class="faq-icon"></span></button>
           <div class="faq-a"><div class="faq-a-inner">Not even a little. You explain your business in plain language; I handle everything technical behind the scenes.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">How small can you start?<span class="faq-icon"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">As small as one task. I'd rather automate one thing well and earn your trust than sell you a big package up front.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">As small as one task. Working alone means I have no sales target to hit, so I would rather automate one thing well and earn your trust than sell you a big package up front.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">What will it cost?<span class="faq-icon"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">After a free call I quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">The call is free. After it I quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Will you replace my current tools?<span class="faq-icon"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">No. I work with what you already have and make it do more. There's nothing new for you to learn.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">No. I work with what you already have and make it do more. There is nothing new for you to learn.</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT (simple) ============ -->
-  <section class="section contact" id="contact">
-    <div class="wrap contact-grid">
-      <div class="contact-copy reveal">
-        <span class="eyebrow">Get in touch</span>
-        <h2>Let's have a<br /><span class="gold-text">no-pressure chat.</span></h2>
-        <p class="lead">Tell me a bit about your business and what's slowing you down. I'll reply personally, usually the same day.</p>
-        <ul class="contact-points">
+  <!-- ============ THE CALL (single conversion point) ============ -->
+  <section class="section call-final alt" id="call">
+    <div class="wrap wrap-narrow">
+      <div class="call-final-inner reveal">
+        <span class="eyebrow">One number, one person</span>
+        <h2>Pick up the phone.<br /><span class="gold-text">That is the whole process.</span></h2>
+        <p class="lead">Twenty minutes on the phone with the person who does the work tells you more than twenty emails ever would.</p>
+
+        <a href="tel:+16159880408" class="phone-display" data-call="call_final" aria-label="Call Aurivara at (615) 988-0408">
+          <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="phone-number">(615) 988-0408</span>
+        </a>
+        <p class="phone-hours">Monday to Friday, 9 to 6 Central. Straight through to me.<br />If I am mid-build and miss you, leave a message and you will hear back the same day.</p>
+
+        <ul class="contact-points centered">
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2.4"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></span> A friendly 20-minute call</li>
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2.4"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></span> One idea you can use right away</li>
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2.4"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Zero obligation to continue</li>
         </ul>
-        <p style="margin-top:24px; font-size:15.5px; color:var(--ink-mut);">
-          Many people start with a free website preview. Happy to build one for you.
-        </p>
-        <p style="margin-top:8px; font-size:15.5px; color:var(--ink-mut);">
-          Prefer to talk? <a href="tel:+16159880408" style="color:var(--gold-2); border-bottom:1px solid var(--gold-2);">(615) 988-0408</a>
-        </p>
+
+        <!-- Demoted fallback: callback request -->
+        <details class="callback" id="callback">
+          <summary>
+            <span class="cb-label">Cannot talk right now? Have me call you instead</span>
+            <span class="cb-icon"></span>
+          </summary>
+          <form class="form callback-form" id="contactForm" novalidate>
+            <div class="form-body">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(615) 555-0100" required />
+              </div>
+              <div class="field">
+                <label for="best_time">Best time to reach you</label>
+                <select id="best_time" name="best_time">
+                  <option value="anytime">Anytime during business hours</option>
+                  <option value="morning">Morning</option>
+                  <option value="midday">Around midday</option>
+                  <option value="afternoon">Afternoon</option>
+                  <option value="after_hours">After hours</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="msg">Anything I should know first? (optional)</label>
+                <textarea id="msg" name="msg" placeholder="The repetitive task you would love to never do again"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold">Request a callback <span class="arr">&rarr;</span></button>
+              <p class="form-note">I call personally. No spam, ever.</p>
+            </div>
+            <div class="form-success">
+              <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3 class="gold-text">Thanks. I will ring you.</h3>
+              <p>Your number comes straight to me. I will call at the time you picked, usually the same day.</p>
+            </div>
+          </form>
+        </details>
       </div>
-      <form class="form" id="contactForm" novalidate>
-        <div class="form-body">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="jane@business.com" required />
-          </div>
-          <div class="field">
-            <label for="msg">What's slowing you down?</label>
-            <textarea id="msg" name="msg" placeholder="The repetitive task you'd love to never do again…"></textarea>
-          </div>
-
-          <!-- Free Website Preview request (progressively revealed) -->
-          <div class="field preview-request">
-            <label class="checkbox-label">
-              <input type="checkbox" id="wants_preview" name="wants_preview" value="yes">
-              <span>I'd like a free website preview</span>
-            </label>
-          </div>
-
-          <div class="field preview-inspiration" id="inspirationWrapper">
-            <label for="website_inspiration">Website inspiration or references</label>
-            <textarea id="website_inspiration" name="website_inspiration" placeholder="Links to sites you love, or ideas for your own…"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-gold"><span data-ab="ctaPrimary">Book a free intro call</span> <span class="arr">→</span></button>
-          <p class="form-note">I reply personally · No spam, ever</p>
-        </div>
-        <div class="form-success">
-          <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-2)" stroke-width="2"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 class="gold-text">Thanks. Message received.</h3>
-          <p>I've got your note and will be in touch personally, usually within the day.</p>
-        </div>
-      </form>
     </div>
   </section>
 
@@ -248,40 +319,42 @@
       <div class="footer-top lean">
         <div class="footer-brand">
           <img src="assets/aurivara-logo-cropped.png" alt="Aurivara" />
-          <p>Fulfilling golden promises. A small studio automating the busywork for owner-led businesses.</p>
+          <p>Fulfilling golden promises. A one man studio automating the busywork for owner-led businesses.</p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
+          <a href="#how-the-call-works">The call</a>
           <a href="#about">About</a>
           <a href="#features">What I do</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
-          <h4>Say hello</h4>
-          <a href="#contact">Book a call</a>
-          <a href="mailto:contact@aurivara.com">contact@aurivara.com</a>
-          <a href="tel:+16159880408">(615) 988-0408</a>
+          <h4>Talk to me</h4>
+          <a href="tel:+16159880408" class="footer-phone" data-call="footer">(615) 988-0408</a>
+          <a href="#callback">Request a callback</a>
+          <span class="footer-hours">Monday to Friday, 9 to 6 Central</span>
         </div>
       </div>
       <div class="footer-bot">
-        <p>© <span id="year"></span> Aurivara. Made with care.</p>
+        <p>&copy; <span id="year"></span> Aurivara. Made with care.</p>
         <div class="socials">
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="var(--ink-mut)"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.5 8.65 22 11 22 14.3V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2s-2.25 1.5-2.25 3.1V21H9z"/></svg></a>
-          <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-mut)" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="tel:+16159880408" aria-label="Phone" data-call="footer_icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-mut)" stroke-width="1.6"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Free Website Preview widget (bottom right) -->
-  <div id="previewWidget" class="preview-widget" aria-hidden="true">
-    <button class="widget-close" aria-label="Dismiss">×</button>
-    <div class="widget-content">
-      <span class="eyebrow">Quiet offer</span>
-      <h4>Free Website Preview</h4>
-      <p>A real static preview of a better site for your business — at no cost.</p>
-      <button type="button" class="btn btn-gold widget-cta">Request one</button>
+  <!-- Sticky call bar (mobile, appears past the hero) -->
+  <div class="callbar" id="callbar" aria-hidden="true">
+    <div class="callbar-copy">
+      <b>Talk it through in 20 minutes</b>
+      <span>Monday to Friday, 9 to 6 CT</span>
     </div>
+    <a href="tel:+16159880408" class="btn btn-gold" data-call="sticky_bar">
+      <svg class="ph-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Call now
+    </a>
   </div>
 
   <!-- shared SVG gradient for icons -->
@@ -291,7 +364,7 @@
     </linearGradient>
   </defs></svg>
 
-  <!-- 
+  <!--
     A/B + Content is now primarily managed in /content.md
     The JavaScript loads the Markdown file and uses it as the source of truth.
     The object below is kept for backward compatibility during the transition.
@@ -305,14 +378,14 @@
         A: {
           headlinePre: "Less busywork.",
           headlineEm:  "More of the work you love.",
-          ctaPrimary:  "Book a free intro call",
-          ctaNav:      "Say hello"
+          ctaPrimary:  "Call (615) 988-0408",
+          ctaNav:      "(615) 988-0408"
         },
         B: {
-          headlinePre: "Automate the small stuff.",
-          headlineEm:  "Get your evenings back.",
-          ctaPrimary:  "Get one free automation idea",
-          ctaNav:      "Get in touch"
+          headlinePre: "One phone call.",
+          headlineEm:  "Your evenings back.",
+          ctaPrimary:  "Call now: (615) 988-0408",
+          ctaNav:      "(615) 988-0408"
         }
       }
     };

@@ -1,56 +1,123 @@
 # Aurivara Website Copy
 
 > **How to use this file**
-> 
+>
 > This is the single source of truth for all marketing copy on the site.
 > Edit this file to change headlines, descriptions, FAQs, etc.
-> 
+>
 > The site loads this file and injects the content into the page.
-> 
+>
 > ---
-> 
+>
+> ## Structure
+>
+> The whole page funnels to one action: a phone call to (615) 988-0408.
+> Every gold button on the site is a tap-to-call link. The callback form is
+> a deliberate fallback, hidden behind a collapsed row in the final section.
+>
+> ---
+>
 > ## Variant Testing
-> 
+>
 > The site supports two variants (A and B) for the Hero section.
 > Define both below. The A/B system will pick one on page load.
+>
+> ---
+>
+> ## Positioning
+>
+> Aurivara is a one man studio. Copy is always first person singular ("I", never
+> "we" or "our team"), and working alone is framed as the advantage: no handoffs,
+> no juniors, limited capacity, the person who answers is the person who builds.
+>
+> ---
+>
+> ## House style
+>
+> No em dashes, no en dashes, no middot separators, no vertical bars.
+> Use commas, periods, or short sentences instead.
 
 ## Meta
 
 **Page Title:** Aurivara: Automation, the simple way
 
+**Meta Description:** Aurivara is a one man automation studio. I help owner-led businesses automate the busywork eating their week. Call (615) 988-0408 and you get me, start to finish.
+
+**Phone:** (615) 988-0408
+
+**Phone Link:** tel:+16159880408
+
+**Hours:** Monday to Friday, 9 to 6 Central
+
 ## Hero
 
-**Eyebrow:** Independent automation studio
+**Eyebrow:** A one man automation studio
 
 ### Variant A
 
 **Pre-headline:** Less busywork.
 **Emphasis:** More of the work you love.
-**Lead:** Aurivara is a small studio that helps owner-led businesses automate the repetitive digital tasks eating their week: quietly, carefully, and without the enterprise price tag.
-**Primary CTA:** Book a free intro call
-**Nav CTA:** Say hello
+**Lead:** Aurivara is one person, not an agency. I help owner-led businesses automate the repetitive digital tasks eating their week. The fastest way to start is a short phone call.
+**Primary CTA:** Call (615) 988-0408
+**Nav CTA:** (615) 988-0408
 
 ### Variant B
 
-**Pre-headline:** Automate the small stuff.
-**Emphasis:** Get your evenings back.
-**Lead:** Aurivara is a small studio that helps owner-led businesses automate the repetitive digital tasks eating their week: quietly, carefully, and without the enterprise price tag.
-**Primary CTA:** Get one free automation idea
-**Nav CTA:** Get in touch
+**Pre-headline:** One phone call.
+**Emphasis:** Your evenings back.
+**Lead:** Aurivara is one person, not an agency. I help owner-led businesses automate the repetitive digital tasks eating their week. The fastest way to start is a short phone call.
+**Primary CTA:** Call now: (615) 988-0408
+**Nav CTA:** (615) 988-0408
 
-**Trust Line:** No long contracts · One friendly point of contact · Start small
+**Secondary CTA:** Rather I called you?
+
+**Trust Line:** Monday to Friday, 9 to 6 Central. One number, and I am the one who picks it up. Twenty minutes, no obligation.
+
+## The Call
+
+**Eyebrow:** Before you dial
+
+**Headline:** Here is exactly<br>how the call goes.
+
+**Intro:** Twenty minutes, no script, no pitch. If there is nothing worth automating, I will tell you that too.
+
+### Step 1
+
+**Timing:** 01. First 5 minutes
+
+**Title:** You talk, I listen
+
+**Description:** Tell me how your week actually runs and which jobs you would hand over tomorrow if you could. Plain language, no tech questions.
+
+### Step 2
+
+**Timing:** 02. Next 10 minutes
+
+**Title:** I tell you what I would fix first
+
+**Description:** You leave with at least one concrete idea you can act on, whether or not you ever hire me.
+
+### Step 3
+
+**Timing:** 03. Last 5 minutes
+
+**Title:** A flat price, or a friendly goodbye
+
+**Description:** If it is a fit, I quote one simple price for the first automation. If it is not, I will say so and point you somewhere better.
+
+**Band Note:** Or have me call you at a better time.
 
 ## About
 
 **Eyebrow:** Hello there
 
-**Headline:** A real person<br>behind every automation.
+**Headline:** The person who answers<br>is the person who builds.
 
-**Lead:** This is not a faceless platform. When you work with Aurivara you get a single, hands-on partner who learns how your business actually runs before changing a thing.
+**Lead:** Aurivara is one man. There is no agency behind me, no team to hand you off to, and nobody else who will ever touch your work. You call, I answer, I build it.
 
-**Subtext:** I often start with a free website preview — a simple, working version of what a better site could look like for your business. From there the automation opportunities usually become clear. No pressure, no jargon.
+**Subtext:** That is the whole promise. No account manager, no discovery questionnaire, no junior rep reading from a script. It also means I take on a handful of businesses at a time, so you get the attention a bigger shop cannot give you.
 
-**CTA:** Book a free intro call
+**CTA:** Call (615) 988-0408
 
 ## Features
 
@@ -58,7 +125,7 @@
 
 **Headline:** Three honest ways<br>I hand your time back.
 
-**Intro:** I keep the menu short on purpose. These are the things that save small businesses the most hours.
+**Intro:** One person can only do a few things properly, so I keep the menu short on purpose. These are the three that save small businesses the most hours.
 
 ### Feature 1
 
@@ -80,21 +147,16 @@
 
 ## Free Website Preview
 
-**Eyebrow:** Quick win
+> Kept as a reason to call, not as a second conversion path.
+> There is no popup widget and no separate request form.
 
-**Headline:** Free Website Preview
+**Eyebrow:** Ask me on the call
 
-**Description:** I build you a real, no-obligation preview of a cleaner website for your business. Many people find this is the easiest way to see what’s possible before going further.
+**Headline:** A free website preview
 
-**CTA:** Request a free preview
+**Description:** Mention it on the call and I will build you a real, no-obligation preview of a cleaner website for your business. Built by me, in my own time, because it is the easiest way to show you what I can do.
 
-## Hero
-
-**Trust Line:** No long contracts · One friendly point of contact · Free website previews available · Start small
-
-## Contact
-
-**Preview Note:** Many people start with a free website preview. Happy to build one for you.
+**CTA:** Call and ask
 
 ## FAQ
 
@@ -102,58 +164,90 @@
 
 **Headline:** Good<br>questions.
 
-**Intro:** Anything else? <a href="#contact">Just ask</a>. I reply personally.
+**Intro:** Anything else? <a href="tel:+16159880408">Just call and ask</a>. I answer my own phone.
 
 ### Questions
 
 #### Q1
 
+**Question:** Am I going to get a sales pitch?
+
+**Answer:** No. It is a conversation, not a script. If I cannot genuinely save you hours, I will say so on the call and you have lost twenty minutes, nothing more.
+
+#### Q2
+
+**Question:** What should I have ready before I call?
+
+**Answer:** Nothing at all. If you want to be prepared, think of the one task you would most love to never do again. That is enough to start.
+
+#### Q3
+
+**Question:** Who actually does the work?
+
+**Answer:** I do. All of it. The person who answers the phone is the person who scopes it, builds it, tests it, and fixes it if it ever breaks. Nothing gets passed to a junior and nothing gets sent offshore.
+
+#### Q4
+
+**Question:** What if I get voicemail?
+
+**Answer:** Then I am on another call or heads down building something. Leave your name and number and you will hear back the same day. It is me listening to the message, not an assistant.
+
+#### Q5
+
 **Question:** Do I need to be technical?
 
 **Answer:** Not even a little. You explain your business in plain language; I handle everything technical behind the scenes.
 
-#### Q2
+#### Q6
 
 **Question:** How small can you start?
 
-**Answer:** As small as one task. I'd rather automate one thing well and earn your trust than sell you a big package up front.
+**Answer:** As small as one task. Working alone means I have no sales target to hit, so I would rather automate one thing well and earn your trust than sell you a big package up front.
 
-#### Q3
+#### Q7
 
 **Question:** What will it cost?
 
-**Answer:** After a free call I quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.
+**Answer:** The call is free. After it I quote a simple flat price for the first automation. No retainers required, no per-seat fees, no surprises.
 
-#### Q4
+#### Q8
 
 **Question:** Will you replace my current tools?
 
-**Answer:** No. I work with what you already have and make it do more. There's nothing new for you to learn.
+**Answer:** No. I work with what you already have and make it do more. There is nothing new for you to learn.
 
-## Contact
+## Call
 
-**Eyebrow:** Get in touch
+**Eyebrow:** One number, one person
 
-**Headline:** Let's have a<br>no-pressure chat.
+**Headline:** Pick up the phone.<br>That is the whole process.
 
-**Lead:** Tell me a bit about your business and what's slowing you down. I'll reply personally, usually the same day.
+**Lead:** Twenty minutes on the phone with the person who does the work tells you more than twenty emails ever would.
+
+**Phone Note:** Monday to Friday, 9 to 6 Central. Straight through to me.<br>If I am mid-build and miss you, leave a message and you will hear back the same day.
 
 **Points:**
 - A friendly 20-minute call
 - One idea you can use right away
 - Zero obligation to continue
 
-**Form Title:** What's slowing you down?
+**Fallback Label:** Cannot talk right now? Have me call you instead
 
-**Form Note:** I reply personally · No spam, ever
+**Form Button:** Request a callback
 
-**Success Message Title:** Thanks. Message received.
+**Form Note:** I call personally. No spam, ever.
 
-**Success Message:** I've got your note and will be in touch personally, usually within the day.
+**Success Message Title:** Thanks. I will ring you.
+
+**Success Message:** Your number comes straight to me. I will call at the time you picked, usually the same day.
 
 ## Footer
 
-**Brand Line:** Fulfilling golden promises. A small studio automating the busywork for owner-led businesses.
+**Brand Line:** Fulfilling golden promises. A one man studio automating the busywork for owner-led businesses.
+
+**Call Bar Title:** Talk it through in 20 minutes
+
+**Call Bar Hours:** Monday to Friday, 9 to 6 CT
 
 ## Variant Config (for A/B testing)
 
@@ -163,12 +257,12 @@
 
 **headlinePre:** Less busywork.
 **headlineEm:** More of the work you love.
-**ctaPrimary:** Book a free intro call
-**ctaNav:** Say hello
+**ctaPrimary:** Call (615) 988-0408
+**ctaNav:** (615) 988-0408
 
 ### Variant B
 
-**headlinePre:** Automate the small stuff.
-**headlineEm:** Get your evenings back.
-**ctaPrimary:** Get one free automation idea
-**ctaNav:** Get in touch
+**headlinePre:** One phone call.
+**headlineEm:** Your evenings back.
+**ctaPrimary:** Call now: (615) 988-0408
+**ctaNav:** (615) 988-0408

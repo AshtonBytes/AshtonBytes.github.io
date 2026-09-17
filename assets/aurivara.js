@@ -204,7 +204,7 @@
         "color:#c8a24c;font-weight:bold", "color:#a39b8c", "color:#f4e3a4;font-weight:bold"
       );
       Object.keys(data).forEach(function (field) {
-        console.log("  • " + field + ":", data[field]);
+        console.log("  - " + field + ":", data[field]);
       });
     };
 
@@ -322,6 +322,18 @@
     else if (target.closest(".about")) {
       location = "about";
     }
+    // "How the call goes" band
+    else if (target.closest(".call-band")) {
+      location = "call_band";
+    }
+    // Final call section
+    else if (target.closest(".call-final")) {
+      location = "call_final";
+    }
+    // Sticky mobile call bar
+    else if (target.closest(".callbar")) {
+      location = "sticky_bar";
+    }
     // Nav CTA
     else if (target.closest(".nav-cta") || target.closest(".nav")) {
       location = "nav";
@@ -339,11 +351,20 @@
       location = "contact_form_button";
     }
 
-    // Only track if it looks like a conversion-oriented click
-    var isConversionCTA = href.includes("#contact") ||
-                          text.toLowerCase().includes("book") ||
-                          text.toLowerCase().includes("hello") ||
-                          text.toLowerCase().includes("touch") ||
+    // Phone calls are THE conversion on this site, so they get their own event.
+    if (href.indexOf("tel:") === 0) {
+      trackEvent("call_click", {
+        cta_location: target.getAttribute("data-call") || location,
+        cta_text: text,
+        destination: href
+      });
+      return;
+    }
+
+    // Everything else that still points at the funnel
+    var isConversionCTA = href.includes("#call") ||
+                          href.includes("#callback") ||
+                          text.toLowerCase().includes("callback") ||
                           text.toLowerCase().includes("call") ||
                           target.classList.contains("btn-gold");
 
@@ -389,11 +410,14 @@
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       var name = form.querySelector("#name");
-      var email = form.querySelector("#email");
+      var phone = form.querySelector("#phone");
       var valid = true;
-      [name, email].forEach(function (f) {
+      [name, phone].forEach(function (f) {
         if (!f) return;
-        if (!f.value.trim() || (f.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value))) {
+        // A usable phone number is any entry with at least 10 digits in it.
+        var digits = (f.value || "").replace(/\D/g, "");
+        var bad = !f.value.trim() || (f.type === "tel" && digits.length < 10);
+        if (bad) {
           f.style.borderColor = "#b4524a";
           valid = false;
         } else {
@@ -419,16 +443,17 @@
         });
         if (!response.ok) throw new Error('Request failed: ' + response.status);
         form.classList.add("sent");
-        console.log("[Aurivara] Inquiry submitted (variant " + variant + ")");
+        console.log("[Aurivara] Callback requested (variant " + variant + ")");
 
-        // Track successful form conversion with variant
-        trackEvent("form_submit", {
-          form_location: "contact_section"
+        // Track successful callback request with variant
+        trackEvent("callback_request", {
+          form_location: "call_section",
+          best_time: formData.best_time || "anytime"
         });
       } catch (err) {
         console.error("[Aurivara] Submission failed", err);
         if (submitBtn) submitBtn.disabled = false;
-        alert("Sorry. Something went wrong sending your message. Please try again or email us directly.");
+        alert("Sorry, something went wrong sending your request. Please try again, or just call (615) 988-0408.");
       }
     });
   }
@@ -472,118 +497,65 @@
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ---------------- FREE WEBSITE PREVIEW WIDGET (bottom right) ---------------- */
-  (function initPreviewWidget() {
-    var widget = document.getElementById("previewWidget");
-    if (!widget) return;
+  /* ---------------- STICKY CALL BAR (mobile) ---------------- */
+  (function initCallBar() {
+    var bar = document.getElementById("callbar");
+    if (!bar) return;
 
-    var closeBtn = widget.querySelector(".widget-close");
-    var ctaBtn = widget.querySelector(".widget-cta");
+    var hero = document.getElementById("hero");
+    var finalCall = document.getElementById("call");
+    var shown = false;
 
-    // TESTING MODE: LocalStorage "show once per user" is temporarily disabled.
-    // The widget will appear on every page load/refresh while testing.
-    var DISMISSED_KEY = "aurivara_preview_widget_dismissed";
+    function update() {
+      // Show once the visitor has scrolled past the hero, hide again over the
+      // final call section where the big number is already on screen.
+      var pastHero = hero ? (hero.getBoundingClientRect().bottom < 0) : (window.scrollY > 600);
+      var atFinal = finalCall && (finalCall.getBoundingClientRect().top < window.innerHeight * 0.8);
+      var shouldShow = pastHero && !atFinal;
 
-    // Clear any previous dismissal so it always shows during testing
-    try { localStorage.removeItem(DISMISSED_KEY); } catch (e) {}
-
-    function isDismissed() {
-      // Always return false so the widget can keep showing during testing
-      return false;
-    }
-
-    function markDismissed() {
-      // Disabled during testing — do nothing
-      // (Uncomment below if you want to restore normal behavior later)
-      // try { localStorage.setItem(DISMISSED_KEY, "true"); } catch (e) {}
-    }
-
-    function showWidget() {
-      if (isDismissed()) return;
-      widget.setAttribute("aria-hidden", "false");
-      widget.classList.add("is-visible");
-    }
-
-    function hideWidget() {
-      widget.classList.remove("is-visible");
-      // Remove from flow after animation
-      setTimeout(function () {
-        widget.setAttribute("aria-hidden", "true");
-      }, 300);
-    }
-
-    function handleRequest() {
-      // markDismissed();   // Disabled in testing mode
-      hideWidget();
-
-      var contact = document.getElementById("contact");
-      var checkbox = document.getElementById("wants_preview");
-      var wrapper = document.getElementById("inspirationWrapper");
-      var inspiration = document.getElementById("website_inspiration");
-
-      // Activate the preview request in the form
-      if (checkbox) checkbox.checked = true;
-      if (wrapper) wrapper.classList.add("is-visible");
-
-      if (contact) {
-        // Scroll 40px further down than the top of the contact section
-        const yOffset = 40;
-        const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        window.scrollTo({
-          top: y,
-          behavior: "smooth"
-        });
+      if (shouldShow && !shown) {
+        bar.classList.add("is-visible");
+        bar.setAttribute("aria-hidden", "false");
+        shown = true;
+        trackEvent("callbar_shown");
+      } else if (!shouldShow && shown) {
+        bar.classList.remove("is-visible");
+        bar.setAttribute("aria-hidden", "true");
+        shown = false;
       }
-
-      // Focus the inspiration field after the scroll has had time to settle.
-      // No additional scrollIntoView here — that was causing the snap
-      // where "What's slowing you down?" jumped to the top.
-      setTimeout(function () {
-        if (inspiration) {
-          inspiration.focus();
-          // .select() removed to avoid extra browser-driven scrolling
-        }
-      }, 1350);
     }
 
-    function handleClose() {
-      // markDismissed();   // Disabled in testing mode
-      hideWidget();
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  })();
+
+  /* ---------------- CALLBACK FALLBACK OPEN TRACKING ---------------- */
+  (function initCallbackDetails() {
+    var details = document.getElementById("callback");
+    if (!details) return;
+
+    details.addEventListener("toggle", function () {
+      if (details.open) {
+        trackEvent("callback_form_open");
+        var phone = document.getElementById("phone");
+        setTimeout(function () { if (phone) phone.focus({ preventScroll: true }); }, 250);
+      }
+    });
+
+    // Deep links (#callback) should open the fallback rather than land on a closed row.
+    function openFromHash() {
+      if (window.location.hash === "#callback" && !details.open) {
+        details.open = true;
+      }
     }
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
 
-    // Event listeners
-    if (closeBtn) closeBtn.addEventListener("click", handleClose);
-    if (ctaBtn) ctaBtn.addEventListener("click", handleRequest);
-
-    // Gentle appearance — less aggressive than the old modal
-    if (!isDismissed()) {
-      setTimeout(function () {
-        // Only show if user isn't already deep into the contact area
-        var scrollY = window.scrollY || 0;
-        var contactSection = document.getElementById("contact");
-        var nearContact = contactSection && (contactSection.getBoundingClientRect().top < 200);
-
-        if (!nearContact && scrollY < 1800) {
-          showWidget();
-        }
-      }, 1000); // 1 second
-    }
-
-    /* ---------------- PREVIEW CHECKBOX TOGGLE (form) ---------------- */
-    var wantsPreview = document.getElementById("wants_preview");
-    var inspirationWrapper = document.getElementById("inspirationWrapper");
-
-    if (wantsPreview && inspirationWrapper) {
-      wantsPreview.addEventListener("change", function () {
-        if (wantsPreview.checked) {
-          inspirationWrapper.classList.add("is-visible");
-        } else {
-          inspirationWrapper.classList.remove("is-visible");
-          var ta = document.getElementById("website_inspiration");
-          if (ta) ta.value = "";
-        }
+    document.querySelectorAll('a[href="#callback"]').forEach(function (a) {
+      a.addEventListener("click", function () {
+        details.open = true;
       });
-    }
+    });
   })();
 })();
